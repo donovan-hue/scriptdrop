@@ -1,0 +1,164 @@
+.token-leaderboard {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.leaderboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.leaderboard-header p {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+.leaderboard-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-button.active {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.leaderboard-table {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 150px 150px;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rank {
+  justify-content: center;
+}
+
+.user {
+  font-weight: 600;
+}
+
+.value,
+.balance {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 150px 150px;
+  gap: 20px;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rank {
+  justify-content: center;
+  font-size: 14px;
+}
+
+.medal {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.rank-number {
+  font-weight: 600;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.amount {
+  text-align: right;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.no-leaderboard {
+  text-align: center;
+  opacity: 0.7;
+  padding: 40px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 50px 1fr 100px;
+    gap: 10px;
+  }
+
+  .col.balance {
+    display: none;
+  }
+
+  .table-header .col.balance {
+    display: none;
+  }
+}

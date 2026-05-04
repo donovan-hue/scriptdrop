@@ -1,0 +1,56 @@
+.story-builder {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.story-builder h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.story-builder form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.story-builder input,
+.story-builder textarea,
+.story-builder select {
+  padding: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.story-builder textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.story-builder button {
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.story-builder button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}

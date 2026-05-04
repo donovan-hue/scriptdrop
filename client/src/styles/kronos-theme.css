@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --kronos-bg: #04040a;
+  --kronos-bg-elev: #08080f;
+  --kronos-bg-phone: #0a0a12;
+
+  --kronos-purple: #7c3aed;
+  --kronos-purple-2: #a855f7;
+  --kronos-violet: #c084fc;
+  --kronos-cyan: #06b6d4;
+  --kronos-blue: #3b82f6;
+  --kronos-pink: #ec4899;
+
+  --kronos-text: #ffffff;
+  --kronos-text-2: rgba(255, 255, 255, 0.7);
+  --kronos-text-3: rgba(255, 255, 255, 0.4);
+  --kronos-text-4: rgba(255, 255, 255, 0.3);
+
+  --kronos-glass: rgba(255, 255, 255, 0.04);
+  --kronos-glass-border: rgba(255, 255, 255, 0.08);
+  --kronos-glass-input: rgba(255, 255, 255, 0.05);
+
+  --kronos-gradient-primary: linear-gradient(135deg, #7c3aed, #3b82f6, #06b6d4);
+  --kronos-gradient-accent: linear-gradient(135deg, #7c3aed, #06b6d4);
+  --kronos-gradient-holo: linear-gradient(135deg, #7c3aed, #06b6d4, #a855f7, #3b82f6, #ec4899);
+
+  --kronos-radius-sm: 10px;
+  --kronos-radius: 12px;
+  --kronos-radius-lg: 16px;
+
+  --kronos-font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.k-theme {
+  background: var(--kronos-bg);
+  color: var(--kronos-text);
+  font-family: var(--kronos-font);
+}
+
+.k-bg {
+  background: var(--kronos-bg-elev);
+}
+
+.k-font {
+  font-family: var(--kronos-font);
+}
+
+.k-holo-text {
+  font-family: var(--kronos-font);
+  font-weight: 800;
+  background: var(--kronos-gradient-holo);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.k-glass {
+  background: var(--kronos-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--kronos-glass-border);
+  border-radius: var(--kronos-radius-lg);
+}
+
+.k-input {
+  background: var(--kronos-glass-input);
+  border: 1px solid var(--kronos-glass-border);
+  border-radius: var(--kronos-radius);
+  padding: 14px 16px;
+  color: var(--kronos-text);
+  font-size: 14px;
+  outline: none;
+  font-family: var(--kronos-font);
+  width: 100%;
+}
+
+.k-input:focus {
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.k-btn-primary {
+  padding: 14px 0;
+  border-radius: var(--kronos-radius);
+  background: var(--kronos-gradient-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--kronos-font);
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.k-btn-secondary {
+  padding: 10px 16px;
+  border-radius: var(--kronos-radius-sm);
+  background: var(--kronos-glass);
+  border: 1px solid var(--kronos-glass-border);
+  color: var(--kronos-text-2);
+  font-family: var(--kronos-font);
+  cursor: pointer;
+}
+
+.k-chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: var(--kronos-font);
+  white-space: nowrap;
+  background: var(--kronos-glass);
+  color: var(--kronos-text-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.k-chip.active {
+  background: var(--kronos-gradient-primary);
+  color: #fff;
+  border: none;
+}
+
+@keyframes k-holo-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.k-holo-animate {
+  animation: k-holo-shift 6s ease-in-out infinite;
+}
+
+.k-scroll-hide::-webkit-scrollbar { display: none; }
+.k-scroll-hide { scrollbar-width: none; }

@@ -1,0 +1,347 @@
+.staking-dashboard {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.staking-header {
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.staking-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.staking-header p {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.staking-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.overview-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.staking-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab-button:hover {
+  opacity: 0.8;
+}
+
+.tab-button.active {
+  border-bottom-color: white;
+  opacity: 1;
+}
+
+.stake-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stake-form {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.staking-options {
+  margin: 30px 0;
+}
+
+.staking-options h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.option-label:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.option-label input[type='radio'] {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.option-label input[type='radio']:checked {
+  accent-color: white;
+}
+
+.option-label input[type='radio']:checked ~ .option-content {
+  opacity: 1;
+}
+
+.option-label:has(input:checked) {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.option-content {
+  flex: 1;
+  opacity: 0.8;
+}
+
+.period {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.apy {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.rewards {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #90ee90;
+  font-weight: 600;
+}
+
+.error-message,
+.success-message {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: rgba(255, 59, 48, 0.9);
+  color: white;
+}
+
+.success-message {
+  background: rgba(76, 175, 80, 0.9);
+  color: white;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.active-stakes-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stakes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stake-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.stake-card:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stake-card.completed {
+  border-color: #90ee90;
+  background: rgba(144, 238, 144, 0.05);
+}
+
+.stake-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item .label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item .value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status-active {
+  color: #90ee90;
+}
+
+.status-completed {
+  color: #87ceeb;
+}
+
+.claim-button {
+  padding: 10px 20px;
+  background: #90ee90;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.claim-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(144, 238, 144, 0.4);
+}
+
+.claim-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.no-stakes {
+  text-align: center;
+  opacity: 0.7;
+  padding: 40px 20px;
+  font-style: italic;
+}

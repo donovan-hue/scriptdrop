@@ -1,0 +1,81 @@
+.story-player {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.story-player.loading,
+.story-player.error {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.story-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.story-content {
+  margin-bottom: 30px;
+}
+
+.story-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.story-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.choice-btn {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, rgba(100,200,255,0.3), rgba(150,100,255,0.3));
+  border: 1px solid rgba(100,200,255,0.5);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.choice-btn:hover {
+  background: linear-gradient(135deg, rgba(100,200,255,0.5), rgba(150,100,255,0.5));
+  transform: translateX(5px);
+}
+
+.ending-message {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255,200,100,0.1);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.session-timer {
+  position: fixed;
+  bottom-right: 20px;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+}

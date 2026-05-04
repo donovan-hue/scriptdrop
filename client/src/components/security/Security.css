@@ -1,0 +1,172 @@
+.security-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.security-container h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.setup-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setup-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+
+.setup-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.scan-step {
+  text-align: center;
+}
+
+.qr-code {
+  width: 250px;
+  height: 250px;
+  margin: 20px 0;
+  border: 2px solid rgba(102, 126, 234, 0.5);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+}
+
+.input-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+.confirm-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.backup-codes {
+  margin-top: 30px;
+  text-align: left;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.backup-codes h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.backup-code {
+  color: #ffc107;
+  font-family: monospace;
+  padding: 8px;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 30px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.success-message h3 {
+  color: #4caf50;
+}
+
+.sessions-list {
+  margin-top: 20px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 3px solid #667eea;
+}
+
+.session-info {
+  flex: 1;
+}
+
+.device-name {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.session-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.session-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.logout-btn {
+  padding: 8px 12px;
+  background: rgba(255, 100, 100, 0.3);
+  color: #ff6464;
+  border: 1px solid rgba(255, 100, 100, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-all {
+  background: rgba(255, 100, 100, 0.3);
+  color: #ff6464;
+  border: 1px solid rgba(255, 100, 100, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

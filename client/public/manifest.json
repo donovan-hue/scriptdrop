@@ -1,0 +1,26 @@
+{
+  "short_name": "Kronos",
+  "name": "Kronos Super-App",
+  "description": "Red Social + E-Commerce + Delivery + Portal + Cinema + AR",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0f0f1a",
+  "background_color": "#0f0f1a",
+  "orientation": "portrait-primary",
+  "categories": ["social", "shopping", "food"]
+}

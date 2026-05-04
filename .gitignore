@@ -1,0 +1,76 @@
+# ===== Secretos: NUNCA commitear =====
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+**/.env
+**/.env.local
+**/.env.production
+**/.env.development
+
+# Keystores Android
+*.keystore
+*.jks
+keystore.properties
+google-services.json
+
+# ===== Dependencias =====
+node_modules/
+**/node_modules/
+
+# ===== Builds =====
+build/
+dist/
+out/
+**/build/
+**/dist/
+client/build/
+
+# Capacitor / Android
+android/app/build/
+android/.gradle/
+android/local.properties
+android/captures/
+android/build/
+
+# ===== Logs =====
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# ===== Cache =====
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.eslintcache
+
+# ===== IDE / OS =====
+.idea/
+.vscode/
+.vs/
+*.iml
+*.suo
+*.user
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Tests / Coverage =====
+coverage/
+.nyc_output/
+
+# ===== Uploads locales =====
+uploads/
+public/uploads/
+server/uploads/
+
+# ===== Misc =====
+*.swp
+*.swo
+*~
+.tmp/
+tmp/

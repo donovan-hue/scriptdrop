@@ -1,0 +1,90 @@
+
+.story-list {
+  padding: 20px;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filters select {
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.story-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.story-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.story-card h3 {
+  padding: 15px 15px 5px;
+  color: #fff;
+  margin: 0;
+}
+
+.story-card .genre {
+  padding: 0 15px;
+  color: #aaa;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.story-card .description {
+  padding: 10px 15px;
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.story-card .stats {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.story-card .play-btn {
+  display: block;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background 0.3s ease;
+}
+
+.story-card .play-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
