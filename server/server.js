@@ -124,10 +124,6 @@ socketService.init(io);
 const aiService = require('./services/aiService');
 aiService.init();
 
-// Initialize Email Worker
-const { startEmailWorker } = require('./services/emailService');
-startEmailWorker();
-
 // Health check
 app.get('/api/health', (req, res) => {
   const mongoose = require('mongoose');
