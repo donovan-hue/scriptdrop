@@ -77,9 +77,12 @@ app.use('/api/auth', authLimiter);
 // =============================================================
 
 // Middleware
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000'
-}));
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:3000',
+  /\.vercel\.app$/,
+].filter(Boolean);
+app.use(cors({ origin: allowedOrigins }));
 
 // ── Stripe webhook: necesita el body en raw ANTES de express.json() ──
 // Si el JSON parser corre primero, la firma de Stripe no se puede verificar.
