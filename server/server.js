@@ -18,6 +18,23 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+// Render corre detrás de un proxy — necesario para req.ip y rate limiting correctos
+app.set('trust proxy', 1);
+
+// Health check ANTES de cualquier middleware (rate limiter, auth, etc.)
+app.get('/api/health', (req, res) => {
+  const mongoose = require('mongoose');
+  const dbState = mongoose.connection.readyState;
+  const dbStatus = dbState === 1 ? 'connected' : 'disconnected';
+  res.status(200).json({
+    status: 'ok',
+    uptime: process.uptime(),
+    db: dbStatus,
+    memory: process.memoryUsage().heapUsed,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Socket.io con CORS
 const io = socketIo(server, {
   cors: {
@@ -124,19 +141,6 @@ socketService.init(io);
 const aiService = require('./services/aiService');
 aiService.init();
 
-// Health check
-app.get('/api/health', (req, res) => {
-  const mongoose = require('mongoose');
-  const dbState = mongoose.connection.readyState;
-  const dbStatus = dbState === 1 ? 'connected' : 'disconnected';
-  res.status(200).json({
-    status: 'ok',
-    uptime: process.uptime(),
-    db: dbStatus,
-    memory: process.memoryUsage().heapUsed,
-    timestamp: new Date().toISOString()
-  });
-});
 
 // ============= SOCKET.IO - CHAT EN TIEMPO REAL =============
 const users = {}; // { userId: socketId }
