@@ -63,6 +63,11 @@ const IconAvatar = () => (
     <circle cx="15.5" cy="9.5" r="1.5" fill="#fff"/>
   </svg>
 );
+const IconShop = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" filter="url(#3d-glass)">
+    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.45 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="url(#iridescent-grad)"/>
+  </svg>
+);
 const IconReserv = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" filter="url(#3d-glass)">
     <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="url(#iridescent-grad)"/>
@@ -85,6 +90,7 @@ const NAV_ITEMS = [
   { Icon: IconChat,        label: 'Mensajes',        to: '/social/chat' },
   { Icon: IconNotif,       label: 'Notificaciones',  to: '/notifications' },
   { Icon: IconCommunities, label: 'Comunidades',     to: '/communities' },
+  { Icon: IconShop,        label: 'Tienda',           to: '/shop' },
   { Icon: IconMarket,      label: 'Marketplace',     to: '/marketplace' },
   { Icon: IconWallet,      label: 'Wallet',          to: '/wallet' },
   { Icon: IconLive,        label: 'LIVE',            to: '/live' },

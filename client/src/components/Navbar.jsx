@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { to: '/search',       label: 'Buscar',        icon: '🔍' },
   { to: '/social/chat',  label: 'Chat',          icon: '💬' },
   { to: '/communities',  label: 'Comunidades',   icon: '🏛️' },
+  { to: '/shop',         label: 'Tienda',         icon: '🛒' },
   { to: '/marketplace',  label: 'Marketplace',   icon: '🛍️' },
   { to: '/wallet',       label: 'Wallet',        icon: '💳' },
   { to: '/live',         label: 'Live',          icon: '🔴' },
