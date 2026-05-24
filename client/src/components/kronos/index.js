@@ -6,3 +6,4 @@ export { default as Skeleton, SkeletonCard, SkeletonList, SkeletonWalletCard } f
 export { default as EmptyState } from './EmptyState';
 export { default as QRCode } from './QRCode';
 export { default as HashtagText } from '../HashtagText';
+export { default as DesktopSidebar } from './DesktopSidebar';

@@ -170,3 +170,181 @@ code {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ============================================================
+   KRONOS RESPONSIVE — Layout adaptativo desktop / tablet / mobile
+   ============================================================ */
+
+/* Sidebar de navegación — solo desktop */
+.kronos-sidebar {
+  display: none;
+}
+
+/* BottomNav — solo mobile y tablet */
+.kronos-bottom-nav {
+  display: flex;
+}
+
+/* Contenido principal — mobile: full width */
+.kronos-main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .kronos-main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  .kronos-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .kronos-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  /* Layout: sidebar izquierdo fijo + contenido central + panel derecho */
+  .kronos-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr 300px;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  /* Solo layout de 2 columnas (sin panel derecho) */
+  .kronos-layout-2col {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar visible en desktop */
+  .kronos-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 24px 16px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    background: rgba(8,8,15,0.97);
+    gap: 6px;
+  }
+
+  /* BottomNav oculto en desktop */
+  .kronos-bottom-nav {
+    display: none !important;
+  }
+
+  /* Contenido principal centrado */
+  .kronos-main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    width: 100%;
+  }
+
+  /* Panel derecho (sugerencias, tendencias) */
+  .kronos-aside {
+    display: block;
+    padding: 24px 16px;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Grids más amplios en desktop */
+  .kronos-grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .kronos-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .kronos-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  /* Cards más anchas en desktop */
+  .kronos-card-wide {
+    max-width: 100%;
+  }
+
+  /* Modales más grandes */
+  .kronos-modal {
+    max-width: 560px !important;
+    border-radius: 24px !important;
+  }
+
+  /* Navbar desktop */
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: none !important;
+  }
+}
+
+/* Desktop grande (1280px+) */
+@media (min-width: 1280px) {
+  .kronos-layout {
+    grid-template-columns: 280px 1fr 320px;
+    max-width: 1440px;
+  }
+
+  .kronos-main {
+    max-width: 680px;
+  }
+}
+
+/* Ajustes de texto responsive */
+@media (min-width: 768px) {
+  .kronos-title {
+    font-size: 32px !important;
+  }
+}
+
+/* Scrollbar estilizado */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124,58,237,0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124,58,237,0.7);
+}

@@ -33,7 +33,7 @@ function CreateGroupModal({ onClose, onCreated }) {
       await axios.post(`${API_URL}/group-chats`, { name, description, memberIds: selected.map(u => u._id) });
       onCreated();
       onClose();
-    } catch (e) { // silenced; }
+    } catch { }
     finally { setLoading(false); }
   };
 

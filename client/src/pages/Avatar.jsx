@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
-import GlassCard from '../components/kronos/GlassCard';
+import { GlassCard, HoloText, BottomNav } from '../components/kronos';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
@@ -601,6 +601,7 @@ export default function AvatarPage() {
           </>
         )}
       </div>
+      <BottomNav />
     </div>
   );
 }

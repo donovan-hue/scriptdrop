@@ -58,6 +58,7 @@ export default function BottomNav({ items }) {
 
   return (
     <nav
+      className="kronos-bottom-nav"
       style={{
         position: 'fixed',
         bottom: 0,
@@ -67,7 +68,6 @@ export default function BottomNav({ items }) {
         background: 'rgba(10,10,18,0.95)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
         backdropFilter: 'blur(12px)',
-        display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
         padding: '0 8px',
