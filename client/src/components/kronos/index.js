@@ -1,6 +1,6 @@
 export { default as HoloText } from './HoloText';
 export { default as GlassCard } from './GlassCard';
-export { default as BottomNav } from './BottomNav';
+export { default as BottomNav } from './BubbleNav';
 export { default as KronosImage } from './KronosImage';
 export { default as Skeleton, SkeletonCard, SkeletonList, SkeletonWalletCard } from './Skeleton';
 export { default as EmptyState } from './EmptyState';
