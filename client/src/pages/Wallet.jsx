@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+﻿import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { GlassCard, HoloText, BottomNav } from '../components/kronos';
 import { AuthContext } from '../context/AuthContext';
@@ -148,7 +148,7 @@ function SendModal({ balance, onClose, onSuccess }) {
                 style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 4px', cursor: 'pointer', borderRadius: 10 }}>
                 <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=40`} alt="" style={{ width: 42, height: 42, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
-                  <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
+                  <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
                   <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>@{u.username}</div>
                 </div>
                 <span style={{ marginLeft: 'auto', color: 'rgba(10,10,20,0.35)', fontSize: 18 }}>→</span>
@@ -162,7 +162,7 @@ function SendModal({ balance, onClose, onSuccess }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, padding: '12px', background: 'rgba(79,172,254,0.04)', borderRadius: 12 }}>
               <img src={selected.avatar || `https://ui-avatars.com/api/?name=${selected.username}&background=random&color=fff&size=40`} alt="" style={{ width: 40, height: 40, borderRadius: '50%' }} />
               <div>
-                <div style={{ color: '#fff', fontWeight: 600 }}>{selected.firstName} {selected.lastName}</div>
+                <div style={{ color: '#0a0a14', fontWeight: 600 }}>{selected.firstName} {selected.lastName}</div>
                 <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>@{selected.username}</div>
               </div>
               <button onClick={() => { setSelected(null); setStep('search'); }} style={{ marginLeft: 'auto', background: 'none', border: 'none', color: 'rgba(10,10,20,0.5)', cursor: 'pointer', fontSize: 13 }}>Cambiar</button>
@@ -294,7 +294,7 @@ function DailyRewardCard({ onClaimed }) {
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <div style={{ fontSize: 40, lineHeight: 1 }}>{canClaim ? '🎁' : '✅'}</div>
         <div style={{ flex: 1 }}>
-          <div style={{ color: '#fff', fontWeight: 700, fontSize: 15, marginBottom: 2 }}>
+          <div style={{ color: '#0a0a14', fontWeight: 700, fontSize: 15, marginBottom: 2 }}>
             {canClaim ? `Recompensa diaria — +${amount} KRO` : 'Recompensa reclamada'}
           </div>
           <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>

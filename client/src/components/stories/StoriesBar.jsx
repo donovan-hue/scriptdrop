@@ -152,7 +152,7 @@ function StoryViewer({ group, onClose, currentUser }) {
           style={{ width: 36, height: 36, borderRadius: '50%', border: '2px solid #fff' }}
         />
         <div>
-          <div style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{group.author.firstName} {group.author.lastName}</div>
+          <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 700 }}>{group.author.firstName} {group.author.lastName}</div>
           <div style={{ color: 'rgba(10,10,20,0.65)', fontSize: 11 }}>
             {new Date(story.createdAt).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}
           </div>
@@ -163,7 +163,7 @@ function StoryViewer({ group, onClose, currentUser }) {
       <div style={{ position: 'absolute', top: 32, right: 16, display: 'flex', gap: 8, zIndex: 1 }}>
         {isMyStory && (
           <button onClick={handleDeleteStory}
-            style={{ background: 'rgba(239,68,68,0.3)', border: '1px solid rgba(239,68,68,0.5)', color: '#fff', fontSize: 14, cursor: 'pointer', borderRadius: 20, padding: '4px 10px', backdropFilter: 'blur(4px)' }}
+            style={{ background: 'rgba(239,68,68,0.3)', border: '1px solid rgba(239,68,68,0.5)', color: '#0a0a14', fontSize: 14, cursor: 'pointer', borderRadius: 20, padding: '4px 10px', backdropFilter: 'blur(4px)' }}
             title="Eliminar historia">
             🗑️
           </button>
@@ -270,7 +270,7 @@ function StoryCreator({ onClose, onCreated }) {
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 9998, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ background: '#13131f', border: '1px solid rgba(124,58,237,0.3)', borderRadius: 20, padding: 28, width: '90%', maxWidth: 380 }}>
-        <div style={{ color: '#fff', fontSize: 18, fontWeight: 700, marginBottom: 20 }}>Nueva Historia</div>
+        <div style={{ color: '#0a0a14', fontSize: 18, fontWeight: 700, marginBottom: 20 }}>Nueva Historia</div>
 
         {/* Preview */}
         <div style={{ width: '100%', aspectRatio: '9/16', maxHeight: 220, background: bgColor, borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, overflow: 'hidden', position: 'relative' }}>
@@ -283,7 +283,7 @@ function StoryCreator({ onClose, onCreated }) {
           onChange={e => setText(e.target.value)}
           placeholder="Escribe algo..."
           maxLength={300}
-          style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: 10, padding: '10px 14px', color: '#fff', fontSize: 14, resize: 'none', outline: 'none', minHeight: 60, fontFamily: 'inherit', boxSizing: 'border-box', marginBottom: 12 }}
+          style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: 10, padding: '10px 14px', color: '#0a0a14', fontSize: 14, resize: 'none', outline: 'none', minHeight: 60, fontFamily: 'inherit', boxSizing: 'border-box', marginBottom: 12 }}
         />
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>

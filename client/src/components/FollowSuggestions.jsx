@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { KronosImage } from './kronos';
@@ -57,7 +57,7 @@ export default function FollowSuggestions() {
                 style={{ flex: 1, minWidth: 0, cursor: 'pointer' }}
                 onClick={() => navigate(`/profile/${user._id}`)}
               >
-                <div style={{ color: '#fff', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {user.firstName} {user.lastName || ''}
                 </div>
                 <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 11 }}>@{user.username}</div>

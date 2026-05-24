@@ -99,7 +99,7 @@ export default function UniversalSearch() {
                 onChange={e => setQuery(e.target.value)}
                 placeholder="Usuarios, posts, hashtags, ropa..."
                 autoComplete="off"
-                style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: 28, padding: '11px 40px 11px 42px', color: '#fff', fontSize: 14, outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box' }}
+                style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: 28, padding: '11px 40px 11px 42px', color: '#0a0a14', fontSize: 14, outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box' }}
               />
               {query && (
                 <button type="button" onClick={clearSearch}
@@ -182,7 +182,7 @@ export default function UniversalSearch() {
                         <img src={post.author?.avatar || `https://ui-avatars.com/api/?name=${post.author?.username}&background=random&color=fff&size=32`}
                           alt="" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                         <div>
-                          <div style={{ color: '#fff', fontSize: 13, fontWeight: 600 }}>{post.author?.firstName || post.author?.username}</div>
+                          <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600 }}>{post.author?.firstName || post.author?.username}</div>
                           <div style={{ color: 'rgba(10,10,20,0.35)', fontSize: 11 }}>@{post.author?.username}</div>
                         </div>
                       </div>
@@ -215,7 +215,7 @@ export default function UniversalSearch() {
                         <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=44`}
                           alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }} />
                         <div style={{ flex: 1 }}>
-                          <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>{u.firstName} {u.lastName}</div>
+                          <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600 }}>{u.firstName} {u.lastName}</div>
                           <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>@{u.username}</div>
                         </div>
                         <div style={{ color: 'rgba(255,255,255,0.25)', fontSize: 12 }}>
@@ -242,7 +242,7 @@ export default function UniversalSearch() {
                         <img src={p.images[0]} alt={p.name} style={{ width: '100%', height: 140, objectFit: 'cover' }} />
                       )}
                       <div style={{ padding: '10px 12px' }}>
-                        <div style={{ color: '#fff', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
+                        <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.name}</div>
                         <div style={{ color: '#a855f7', fontSize: 14, fontWeight: 800, marginTop: 2 }}>${p.price}</div>
                       </div>
                     </GlassCard>

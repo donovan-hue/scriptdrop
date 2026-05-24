@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+﻿import React, { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import IridescentDefs from './IridescentDefs';
@@ -201,11 +201,11 @@ export default function DesktopSidebar() {
 
       {/* User */}
       {user && (
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginTop: 8 }}>
+        <div style={{ borderTop: '1px solid rgba(79,172,254,0.12)', paddingTop: 16, marginTop: 8 }}>
           <div
             onClick={() => navigate(userId ? `/profile/${userId}` : '/profile/me')}
             style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', borderRadius: 14, cursor: 'pointer', marginBottom: 8,
-              background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              background: 'rgba(79,172,254,0.04)', border: '1px solid rgba(79,172,254,0.12)' }}
           >
             <img
               src={user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'K')}&background=7c3aed&color=fff&size=36`}
@@ -213,10 +213,10 @@ export default function DesktopSidebar() {
               style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(79,172,254,0.4)' }}
             />
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ color: '#fff', fontWeight: 600, fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {user.firstName || user.username}
               </div>
-              <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>@{user.username}</div>
+              <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 11 }}>@{user.username}</div>
             </div>
           </div>
           <button

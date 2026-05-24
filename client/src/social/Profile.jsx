@@ -175,7 +175,7 @@ function Profile() {
       {/* Back button */}
       {userId && (
         <button onClick={() => navigate(-1)}
-          style={{ position: 'fixed', top: 16, left: 16, zIndex: 10, background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: '50%', width: 40, height: 40, color: '#fff', fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          style={{ position: 'fixed', top: 16, left: 16, zIndex: 10, background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(79,172,254,0.18)', borderRadius: '50%', width: 40, height: 40, color: '#0a0a14', fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           ←
         </button>
       )}
@@ -213,7 +213,7 @@ function Profile() {
               { label: 'Siguiendo', value: profile.following?.length || 0 },
             ].map(stat => (
               <div key={stat.label} style={{ textAlign: 'center' }}>
-                <div style={{ color: '#fff', fontSize: 18, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: '#0a0a14', fontSize: 18, fontWeight: 800 }}>{stat.value}</div>
                 <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 11 }}>{stat.label}</div>
               </div>
             ))}

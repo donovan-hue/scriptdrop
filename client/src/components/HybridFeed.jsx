@@ -214,7 +214,7 @@ function HybridFeed() {
                 placeholder="¿Qué está pasando?"
                 style={{
                   width: '100%', background: 'rgba(79,172,254,0.07)', border: `1px solid ${postText.length > 260 ? (postText.length >= 280 ? '#ef4444' : '#f59e0b') : 'rgba(79,172,254,0.18)'}`,
-                  borderRadius: 12, padding: '10px 14px', color: '#fff', fontSize: 14, resize: 'none',
+                  borderRadius: 12, padding: '10px 14px', color: '#0a0a14', fontSize: 14, resize: 'none',
                   outline: 'none', minHeight: 70, fontFamily: 'inherit', boxSizing: 'border-box',
                 }}
               />
@@ -281,7 +281,7 @@ function HybridFeed() {
                         style={{ cursor: 'pointer' }}
                       />
                       <div style={{ flex: 1 }}>
-                        <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>
+                        <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600 }}>
                           {post.author?.firstName} {post.author?.lastName || post.author?.username}
                         </div>
                         <div style={{ color: 'rgba(10,10,20,0.35)', fontSize: 11 }}>
@@ -292,7 +292,7 @@ function HybridFeed() {
 
                     {/* Content */}
                     {post.content && (
-                      <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, marginBottom: 10, lineHeight: 1.5 }}>
+                      <div style={{ color: '#0a0a14', fontSize: 14, marginBottom: 10, lineHeight: 1.5 }}>
                         <HashtagText text={post.content} />
                       </div>
                     )}
@@ -337,7 +337,7 @@ function HybridFeed() {
                               <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12 }}>👤</div>
                                 <div style={{ background: 'rgba(79,172,254,0.07)', borderRadius: 10, padding: '6px 10px', flex: 1 }}>
-                                  <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{c.text}</div>
+                                  <div style={{ color: '#0a0a14', fontSize: 13 }}>{c.text}</div>
                                 </div>
                               </div>
                             ))}
@@ -351,7 +351,7 @@ function HybridFeed() {
                             placeholder="Escribe un comentario..."
                             style={{
                               flex: 1, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.18)',
-                              borderRadius: 20, padding: '8px 14px', color: '#fff', fontSize: 13, outline: 'none', fontFamily: 'inherit',
+                              borderRadius: 20, padding: '8px 14px', color: '#0a0a14', fontSize: 13, outline: 'none', fontFamily: 'inherit',
                             }}
                           />
                           <button
@@ -382,7 +382,7 @@ function HybridFeed() {
                     )}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                        <div style={{ color: '#fff', fontSize: 15, fontWeight: 700 }}>{product.name}</div>
+                        <div style={{ color: '#0a0a14', fontSize: 15, fontWeight: 700 }}>{product.name}</div>
                         <span style={{ fontSize: 10, padding: '3px 10px', borderRadius: 12, background: 'linear-gradient(135deg,#7c3aed,#3b82f6)', color: '#fff' }}>🛍️</span>
                       </div>
                       <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, marginBottom: 8, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>

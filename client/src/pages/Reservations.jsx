@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { GlassCard, HoloText, BottomNav } from '../components/kronos';
 
@@ -259,7 +259,7 @@ function ReservationCard({ reservation, onCancel }) {
         {/* Info */}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
-            <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>{reservation.businessName}</span>
+            <span style={{ color: '#0a0a14', fontWeight: 700, fontSize: 15 }}>{reservation.businessName}</span>
             <StatusBadge status={reservation.status} />
           </div>
 

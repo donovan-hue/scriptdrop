@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { GlassCard, HoloText, BottomNav } from '../components/kronos';
@@ -151,7 +151,7 @@ export default function ConversationList() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=40`} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }} />
                   <div>
-                    <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
+                    <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
                     <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>@{u.username}</div>
                   </div>
                   <span style={{ marginLeft: 'auto', fontSize: 18 }}>💬</span>
@@ -179,7 +179,7 @@ export default function ConversationList() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <img src={chat.avatar || `https://ui-avatars.com/api/?name=${chat.username}&background=random&color=fff&size=40`} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }} />
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{chat.firstName || chat.username}</div>
+                    <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{chat.firstName || chat.username}</div>
                     <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{chat.lastMessage || 'Sin mensajes aún'}</div>
                   </div>
                   {chat.unread > 0 && (
@@ -206,7 +206,7 @@ export default function ConversationList() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>👥</div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{g.name}</div>
+                    <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{g.name}</div>
                     <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {g.lastMessage?.content || `${g.members?.length || 0} miembros`}
                     </div>

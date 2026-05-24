@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+﻿import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import axios from 'axios';
@@ -463,7 +463,7 @@ export default function Live() {
                     <div style={{ padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 12 }}>
                       <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(s.streamerName)}&background=7c3aed&color=fff&size=40`} alt="" style={{ width: 36, height: 36, borderRadius: '50%' }} />
                       <div>
-                        <div style={{ color: '#fff', fontWeight: 700, fontSize: 14 }}>{s.streamerName}</div>
+                        <div style={{ color: '#0a0a14', fontWeight: 700, fontSize: 14 }}>{s.streamerName}</div>
                         <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 11 }}>Toca para ver el stream</div>
                       </div>
                     </div>
@@ -499,7 +499,7 @@ export default function Live() {
               <div key={u._id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 4px' }}>
                 <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=40`} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
+                  <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{u.firstName} {u.lastName}</div>
                   <div style={{ color: 'rgba(10,10,20,0.5)', fontSize: 12 }}>@{u.username}</div>
                 </div>
                 <button onClick={() => startCall(u)}

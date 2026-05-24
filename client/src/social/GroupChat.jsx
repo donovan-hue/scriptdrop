@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+﻿import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
@@ -83,7 +83,7 @@ export default function GroupChat() {
         <button onClick={() => navigate('/social/chat')} style={{ background: 'none', border: 'none', color: 'rgba(10,10,20,0.65)', fontSize: 22, cursor: 'pointer', padding: 4 }}>←</button>
         <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>👥</div>
         <div style={{ flex: 1 }}>
-          <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{group?.name || 'Grupo'}</div>
+          <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{group?.name || 'Grupo'}</div>
           <div style={{ color: 'rgba(10,10,20,0.35)', fontSize: 11 }}>
             {typingUsers.length > 0
               ? `${typingUsers.map(u => u.username).join(', ')} escribiendo...`

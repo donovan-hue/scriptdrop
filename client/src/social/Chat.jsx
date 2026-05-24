@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+﻿import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
@@ -81,7 +81,7 @@ function Chat() {
           <>
             <img src={otherUser.avatar || `https://ui-avatars.com/api/?name=${otherUser.username}&background=random&color=fff&size=40`} alt={otherUser.username} style={{ width: 38, height: 38, borderRadius: '50%', objectFit: 'cover' }} />
             <div>
-              <div style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>{otherUser.firstName} {otherUser.lastName || otherUser.username}</div>
+              <div style={{ color: '#0a0a14', fontWeight: 600, fontSize: 14 }}>{otherUser.firstName} {otherUser.lastName || otherUser.username}</div>
               <div style={{ color: 'rgba(10,10,20,0.35)', fontSize: 11 }}>{isTyping ? 'escribiendo...' : `@${otherUser.username}`}</div>
             </div>
           </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback, useRef } from 'react';
+﻿import React, { useState, useEffect, useContext, useCallback, useRef } from 'react';
 import axios from 'axios';
 import { GlassCard, HoloText, BottomNav } from '../components/kronos';
 import { AuthContext } from '../context/AuthContext';
@@ -98,7 +98,7 @@ function ListingCard({ listing, onClick }) {
         🛍️
       </div>
       <div style={{ padding: '12px 14px', flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
-        <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+        <div style={{ color: '#0a0a14', fontWeight: 700, fontSize: 14, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
           {listing.title}
         </div>
         <div style={{ color: '#06b6d4', fontWeight: 800, fontSize: 16 }}>
@@ -308,7 +308,7 @@ function ListingDetailModal({ listing: initialListing, user, onClose, onUpdate }
         )}
 
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, marginBottom: 10 }}>
-          <div style={{ color: '#fff', fontWeight: 800, fontSize: 18, lineHeight: 1.3, flex: 1 }}>{listing.title}</div>
+          <div style={{ color: '#0a0a14', fontWeight: 800, fontSize: 18, lineHeight: 1.3, flex: 1 }}>{listing.title}</div>
           {statusBadge(listing.status)}
         </div>
 
@@ -426,7 +426,7 @@ function MyListingItem({ listing, onUpdate }) {
           <div style={{ width: 60, height: 60, borderRadius: 10, background: 'linear-gradient(135deg,rgba(124,58,237,0.2),rgba(6,182,212,0.1))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0 }}>🛍️</div>
         )}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginBottom: 4 }}>
+          <div style={{ color: '#0a0a14', fontWeight: 700, fontSize: 14, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginBottom: 4 }}>
             {listing.title}
           </div>
           <div style={{ color: '#06b6d4', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>
