@@ -77,9 +77,9 @@ export default function GroupChat() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
-      <div style={{ padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(10,10,18,0.95)', borderBottom: '1px solid rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 50 }}>
+      <div style={{ padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12, background: '#ffffff', borderBottom: '1px solid rgba(79,172,254,0.12)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 50 }}>
         <button onClick={() => navigate('/social/chat')} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', fontSize: 22, cursor: 'pointer', padding: 4 }}>←</button>
         <div style={{ width: 38, height: 38, borderRadius: '50%', background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>👥</div>
         <div style={{ flex: 1 }}>
@@ -90,7 +90,7 @@ export default function GroupChat() {
               : `${group?.members?.length || 0} miembros`}
           </div>
         </div>
-        <button onClick={() => setShowMembers(s => !s)} style={{ background: 'rgba(255,255,255,0.08)', border: 'none', color: '#fff', fontSize: 12, cursor: 'pointer', padding: '6px 12px', borderRadius: 12 }}>
+        <button onClick={() => setShowMembers(s => !s)} style={{ background: 'rgba(79,172,254,0.07)', border: 'none', color: '#0a0a14', fontSize: 12, cursor: 'pointer', padding: '6px 12px', borderRadius: 12 }}>
           Info
         </button>
         <button onClick={handleLeave} style={{ background: 'rgba(239,68,68,0.15)', border: 'none', color: '#ef4444', fontSize: 12, cursor: 'pointer', padding: '6px 12px', borderRadius: 12 }}>
@@ -126,7 +126,7 @@ export default function GroupChat() {
                   maxWidth: '70%', padding: '10px 14px',
                   borderRadius: isMine ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
                   background: isMine ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.08)',
-                  color: '#fff', fontSize: 14, lineHeight: 1.4,
+                  color: '#0a0a14', fontSize: 14, lineHeight: 1.4,
                 }}>
                   {msg.content}
                 </div>
@@ -141,13 +141,13 @@ export default function GroupChat() {
 
         {/* Members panel */}
         {showMembers && group && (
-          <div style={{ width: 220, background: 'rgba(10,10,18,0.97)', borderLeft: '1px solid rgba(255,255,255,0.06)', padding: 16, overflowY: 'auto' }}>
+          <div style={{ width: 220, background: '#ffffff', borderLeft: '1px solid rgba(255,255,255,0.06)', padding: 16, overflowY: 'auto' }}>
             <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>Miembros ({group.members?.length})</div>
             {group.members?.map(m => (
               <div key={m._id} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                 <img src={m.avatar || `https://ui-avatars.com/api/?name=${m.username}&background=random&color=fff&size=32`} alt="" style={{ width: 32, height: 32, borderRadius: '50%', objectFit: 'cover' }} />
                 <div>
-                  <div style={{ color: '#fff', fontSize: 12, fontWeight: 600 }}>{m.firstName || m.username}</div>
+                  <div style={{ color: '#0a0a14', fontSize: 12, fontWeight: 600 }}>{m.firstName || m.username}</div>
                   {group.admins?.some(a => (a._id || a)?.toString() === m._id?.toString()) && (
                     <div style={{ color: '#a855f7', fontSize: 10 }}>Admin</div>
                   )}
@@ -159,16 +159,16 @@ export default function GroupChat() {
       </div>
 
       {/* Input */}
-      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: 'rgba(10,10,18,0.97)', borderTop: '1px solid rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', display: 'flex', gap: 10, alignItems: 'center' }}>
+      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '12px 16px', background: '#ffffff', borderTop: '1px solid rgba(79,172,254,0.12)', backdropFilter: 'blur(12px)', display: 'flex', gap: 10, alignItems: 'center' }}>
         <input
           value={input}
           onChange={e => handleTyping(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && handleSend()}
           placeholder={`Mensaje en ${group?.name || 'el grupo'}...`}
-          style={{ flex: 1, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 24, padding: '10px 16px', color: '#fff', fontSize: 14, outline: 'none', fontFamily: 'inherit' }}
+          style={{ flex: 1, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 24, padding: '10px 16px', color: '#0a0a14', fontSize: 14, outline: 'none', fontFamily: 'inherit' }}
         />
         <button onClick={handleSend} disabled={!input.trim()}
-          style={{ width: 42, height: 42, borderRadius: '50%', background: input.trim() ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.08)', border: 'none', color: '#fff', fontSize: 18, cursor: input.trim() ? 'pointer' : 'default', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          style={{ width: 42, height: 42, borderRadius: '50%', background: input.trim() ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.08)', border: 'none', color: '#0a0a14', fontSize: 18, cursor: input.trim() ? 'pointer' : 'default', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           ➤
         </button>
       </div>

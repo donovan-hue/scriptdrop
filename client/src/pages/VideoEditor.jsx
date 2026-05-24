@@ -197,7 +197,7 @@ export default function VideoEditor() {
   const styles = {
     page: {
       minHeight: '100vh',
-      background: '#08080f',
+      background: '#ffffff',
       color: '#fff',
       fontFamily: "'Outfit', sans-serif",
       paddingTop: 72,
@@ -270,8 +270,8 @@ export default function VideoEditor() {
       border: variant === 'danger' ? '1px solid rgba(239,68,68,0.3)' : (active ? 'none' : '1px solid rgba(255,255,255,0.1)'),
     }),
     input: {
-      background: 'rgba(255,255,255,0.06)',
-      border: '1px solid rgba(255,255,255,0.1)',
+      background: 'rgba(79,172,254,0.07)',
+      border: '1px solid rgba(79,172,254,0.2)',
       borderRadius: 8,
       padding: '8px 12px',
       color: '#fff',
@@ -468,7 +468,7 @@ export default function VideoEditor() {
                   left: '50%',
                   transform: 'translateX(-50%)',
                   background: 'rgba(0,0,0,0.65)',
-                  color: '#fff',
+                  color: '#0a0a14',
                   padding: '6px 14px',
                   borderRadius: 8,
                   fontSize: 18,

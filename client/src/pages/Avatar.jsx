@@ -46,7 +46,7 @@ function AvatarCanvas({ avatar }) {
       height: 200,
       borderRadius: 24,
       background: bgEmoji
-        ? `radial-gradient(ellipse at center, #1a0a2e 0%, #08080f 100%)`
+        ? `radial-gradient(ellipse at center, #1a0a2e 0%, #ffffff 100%)`
         : bgColor,
       border: '2px solid rgba(124,58,237,0.5)',
       display: 'flex',
@@ -238,7 +238,7 @@ export default function AvatarPage() {
   const styles = {
     page: {
       minHeight: '100vh',
-      background: '#08080f',
+      background: '#ffffff',
       color: '#fff',
       fontFamily: "'Outfit', sans-serif",
       paddingTop: 72,
@@ -264,7 +264,7 @@ export default function AvatarPage() {
       maxWidth: 600,
       marginLeft: 'auto',
       marginRight: 'auto',
-      background: 'rgba(255,255,255,0.05)',
+      background: 'rgba(79,172,254,0.04)',
       borderRadius: 12,
       padding: 4,
     },
@@ -312,7 +312,7 @@ export default function AvatarPage() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '10px 14px',
-      background: 'rgba(255,255,255,0.04)',
+      background: 'rgba(79,172,254,0.04)',
       borderRadius: 10,
       marginBottom: 8,
     },
@@ -333,14 +333,14 @@ export default function AvatarPage() {
       marginTop: 8,
     },
     itemCard: {
-      background: 'rgba(255,255,255,0.04)',
+      background: 'rgba(79,172,254,0.04)',
       borderRadius: 14,
       padding: 14,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       gap: 6,
-      border: '1px solid rgba(255,255,255,0.06)',
+      border: '1px solid rgba(79,172,254,0.12)',
       transition: 'transform 0.15s',
     },
     rarityBadge: (rarity) => ({

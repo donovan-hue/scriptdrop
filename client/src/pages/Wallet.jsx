@@ -42,8 +42,8 @@ function VirtualCardDisplay({ card, onFreeze }) {
 
         {/* Network & chip */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28, position: 'relative', zIndex: 1 }}>
-          <div style={{ color: '#fff', fontSize: 18, fontWeight: 900, letterSpacing: 2 }}>KRONOS</div>
-          <div style={{ color: '#fff', fontSize: 14, fontWeight: 700, opacity: 0.9 }}>{card.network}</div>
+          <div style={{ color: '#0a0a14', fontSize: 18, fontWeight: 900, letterSpacing: 2 }}>KRONOS</div>
+          <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 700, opacity: 0.9 }}>{card.network}</div>
         </div>
 
         {/* Chip */}
@@ -53,7 +53,7 @@ function VirtualCardDisplay({ card, onFreeze }) {
         </div>
 
         {/* Card number */}
-        <div style={{ color: '#fff', fontSize: 18, letterSpacing: 4, fontFamily: 'monospace', marginBottom: 20, position: 'relative', zIndex: 1 }}>
+        <div style={{ color: '#0a0a14', fontSize: 18, letterSpacing: 4, fontFamily: 'monospace', marginBottom: 20, position: 'relative', zIndex: 1 }}>
           {showDetails ? card.cardNumber : masked}
         </div>
 
@@ -61,15 +61,15 @@ function VirtualCardDisplay({ card, onFreeze }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', position: 'relative', zIndex: 1 }}>
           <div>
             <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 9, letterSpacing: 1, marginBottom: 2 }}>TITULAR</div>
-            <div style={{ color: '#fff', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>{card.cardholderName}</div>
+            <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>{card.cardholderName}</div>
           </div>
           <div style={{ textAlign: 'center' }}>
             <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 9, letterSpacing: 1, marginBottom: 2 }}>VÁLIDA HASTA</div>
-            <div style={{ color: '#fff', fontSize: 13, fontFamily: 'monospace' }}>{card.expiry}</div>
+            <div style={{ color: '#0a0a14', fontSize: 13, fontFamily: 'monospace' }}>{card.expiry}</div>
           </div>
           <div style={{ textAlign: 'center' }}>
             <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 9, letterSpacing: 1, marginBottom: 2 }}>CVV</div>
-            <div style={{ color: '#fff', fontSize: 13, fontFamily: 'monospace' }}>{showDetails ? card.cvv : '•••'}</div>
+            <div style={{ color: '#0a0a14', fontSize: 13, fontFamily: 'monospace' }}>{showDetails ? card.cvv : '•••'}</div>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ function VirtualCardDisplay({ card, onFreeze }) {
       {/* Card actions */}
       <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
         <button onClick={() => setShowDetails(s => !s)}
-          style={{ flex: 1, padding: '10px', borderRadius: 12, background: 'rgba(255,255,255,0.06)', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', fontSize: 13, cursor: 'pointer' }}>
+          style={{ flex: 1, padding: '10px', borderRadius: 12, background: 'rgba(79,172,254,0.07)', color: '#0a0a14', border: '1px solid rgba(79,172,254,0.2)', fontSize: 13, cursor: 'pointer' }}>
           {showDetails ? '🙈 Ocultar' : '👁️ Ver detalles'}
         </button>
         <button onClick={onFreeze}
@@ -135,14 +135,14 @@ function SendModal({ balance, onClose, onSuccess }) {
     <div style={{ position: 'fixed', inset: 0, zIndex: 999, background: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
       <GlassCard style={{ width: '100%', maxWidth: 480, borderRadius: '20px 20px 0 0', paddingBottom: 32 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 17, fontWeight: 700 }}>Enviar dinero</div>
+          <div style={{ color: '#0a0a14', fontSize: 17, fontWeight: 700 }}>Enviar dinero</div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', fontSize: 20, cursor: 'pointer' }}>✕</button>
         </div>
 
         {step === 'search' && (
           <>
             <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar usuario..."
-              style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '10px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 12, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+              style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 12, padding: '10px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 12, boxSizing: 'border-box', fontFamily: 'inherit' }} />
             {results.map(u => (
               <div key={u._id} onClick={() => { setSelected(u); setStep('amount'); }}
                 style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 4px', cursor: 'pointer', borderRadius: 10 }}>
@@ -159,7 +159,7 @@ function SendModal({ balance, onClose, onSuccess }) {
 
         {step === 'amount' && selected && (
           <>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, padding: '12px', background: 'rgba(255,255,255,0.04)', borderRadius: 12 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, padding: '12px', background: 'rgba(79,172,254,0.04)', borderRadius: 12 }}>
               <img src={selected.avatar || `https://ui-avatars.com/api/?name=${selected.username}&background=random&color=fff&size=40`} alt="" style={{ width: 40, height: 40, borderRadius: '50%' }} />
               <div>
                 <div style={{ color: '#fff', fontWeight: 600 }}>{selected.firstName} {selected.lastName}</div>
@@ -175,7 +175,7 @@ function SendModal({ balance, onClose, onSuccess }) {
                 <input
                   type="number" value={amount} onChange={e => setAmount(e.target.value)}
                   placeholder="0.00" min="0" max={balance} step="0.01"
-                  style={{ background: 'none', border: 'none', color: '#fff', fontSize: 48, fontWeight: 700, width: 180, textAlign: 'center', outline: 'none', fontFamily: 'inherit' }}
+                  style={{ background: 'none', border: 'none', color: '#0a0a14', fontSize: 48, fontWeight: 700, width: 180, textAlign: 'center', outline: 'none', fontFamily: 'inherit' }}
                 />
               </div>
               <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12 }}>Disponible: ${balance.toFixed(2)}</div>
@@ -192,7 +192,7 @@ function SendModal({ balance, onClose, onSuccess }) {
             </div>
 
             <input value={note} onChange={e => setNote(e.target.value)} placeholder="Nota (opcional)"
-              style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '10px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 16, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+              style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 12, padding: '10px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 16, boxSizing: 'border-box', fontFamily: 'inherit' }} />
 
             <button onClick={handleSend} disabled={loading || !amount || Number(amount) <= 0 || Number(amount) > balance}
               style={{ width: '100%', padding: '14px', borderRadius: 14, background: amount && Number(amount) > 0 && Number(amount) <= balance ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.08)', color: '#fff', border: 'none', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
@@ -229,14 +229,14 @@ function DepositModal({ onClose, onSuccess }) {
     <div style={{ position: 'fixed', inset: 0, zIndex: 999, background: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
       <GlassCard style={{ width: '100%', maxWidth: 480, borderRadius: '20px 20px 0 0', paddingBottom: 32 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 17, fontWeight: 700 }}>Recargar saldo</div>
+          <div style={{ color: '#0a0a14', fontSize: 17, fontWeight: 700 }}>Recargar saldo</div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', fontSize: 20, cursor: 'pointer' }}>✕</button>
         </div>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
             <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 28 }}>$</span>
             <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00" min="1" max="10000"
-              style={{ background: 'none', border: 'none', color: '#fff', fontSize: 48, fontWeight: 700, width: 180, textAlign: 'center', outline: 'none', fontFamily: 'inherit' }} />
+              style={{ background: 'none', border: 'none', color: '#0a0a14', fontSize: 48, fontWeight: 700, width: 180, textAlign: 'center', outline: 'none', fontFamily: 'inherit' }} />
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, marginBottom: 20, justifyContent: 'center' }}>
@@ -359,7 +359,7 @@ export default function Wallet() {
   const txColor = { deposit: '#10b981', withdrawal: '#ef4444', transfer_in: '#10b981', transfer_out: '#ef4444', payment: '#f59e0b', refund: '#06b6d4' };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 100 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 100 }}>
       {/* Toast */}
       {toast && (
         <div style={{ position: 'fixed', top: 80, left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', color: '#fff', padding: '10px 24px', borderRadius: 28, fontSize: 14, fontWeight: 600, zIndex: 9999, boxShadow: '0 8px 32px rgba(124,58,237,0.4)' }}>
@@ -377,7 +377,7 @@ export default function Wallet() {
             {/* Balance principal */}
             <GlassCard style={{ textAlign: 'center', marginBottom: 20, padding: '32px 24px', background: 'linear-gradient(135deg,rgba(124,58,237,0.15),rgba(6,182,212,0.08))' }}>
               <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, marginBottom: 6, letterSpacing: 1 }}>SALDO DISPONIBLE</div>
-              <div style={{ color: '#fff', fontSize: 52, fontWeight: 900, letterSpacing: -2, marginBottom: 4 }}>
+              <div style={{ color: '#0a0a14', fontSize: 52, fontWeight: 900, letterSpacing: -2, marginBottom: 4 }}>
                 ${(data?.cash?.balance || 0).toFixed(2)}
               </div>
               <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12 }}>{data?.cash?.currency || 'USD'}</div>
@@ -436,7 +436,7 @@ export default function Wallet() {
                             {txIcon[tx.type] || '💰'}
                           </div>
                           <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ color: '#fff', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                            <div style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                               {tx.description || tx.type}
                             </div>
                             <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 11 }}>
@@ -468,7 +468,7 @@ export default function Wallet() {
                   ].map(item => (
                     <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
                       <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13 }}>{item.label}</span>
-                      <span style={{ color: '#fff', fontSize: 13, fontWeight: 600 }}>{item.value}</span>
+                      <span style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600 }}>{item.value}</span>
                     </div>
                   ))}
                 </GlassCard>

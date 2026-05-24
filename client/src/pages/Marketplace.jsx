@@ -44,7 +44,7 @@ function statusBadge(status) {
 }
 
 const inputStyle = {
-  background: 'rgba(255,255,255,0.06)',
+  background: 'rgba(79,172,254,0.07)',
   border: '1px solid rgba(255,255,255,0.12)',
   borderRadius: 10,
   padding: '10px 14px',
@@ -68,8 +68,8 @@ function ListingCard({ listing, onClick }) {
       onClick={() => onClick(listing)}
       style={{
         cursor: 'pointer',
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'rgba(79,172,254,0.04)',
+        border: '1px solid rgba(79,172,254,0.15)',
         borderRadius: 16,
         overflow: 'hidden',
         transition: 'transform 0.18s, box-shadow 0.18s',
@@ -154,7 +154,7 @@ function CreateListingModal({ onClose, onCreated }) {
     <div style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.82)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}>
       <GlassCard style={{ width: '100%', maxWidth: 460 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>Nuevo Listing</div>
+          <div style={{ color: '#0a0a14', fontSize: 18, fontWeight: 700 }}>Nuevo Listing</div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', fontSize: 22, cursor: 'pointer', lineHeight: 1 }}>×</button>
         </div>
         {error && (
@@ -208,14 +208,14 @@ function CreateListingModal({ onClose, onCreated }) {
             <button
               type="button"
               onClick={onClose}
-              style={{ flex: 1, padding: '11px 0', borderRadius: 12, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}
+              style={{ flex: 1, padding: '11px 0', borderRadius: 12, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', color: '#0a0a14', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={loading}
-              style={{ flex: 2, padding: '11px 0', borderRadius: 12, background: loading ? 'rgba(124,58,237,0.4)' : 'linear-gradient(135deg,#7c3aed,#06b6d4)', border: 'none', color: '#fff', fontSize: 14, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
+              style={{ flex: 2, padding: '11px 0', borderRadius: 12, background: loading ? 'rgba(124,58,237,0.4)' : 'linear-gradient(135deg,#7c3aed,#06b6d4)', border: 'none', color: '#0a0a14', fontSize: 14, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
             >
               {loading ? 'Publicando...' : 'Publicar'}
             </button>
@@ -369,7 +369,7 @@ function ListingDetailModal({ listing: initialListing, user, onClose, onUpdate }
             <button
               onClick={handleBuy}
               disabled={loading}
-              style={{ width: '100%', padding: '13px 0', borderRadius: 12, background: loading ? 'rgba(124,58,237,0.4)' : 'linear-gradient(135deg,#7c3aed,#06b6d4)', border: 'none', color: '#fff', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
+              style={{ width: '100%', padding: '13px 0', borderRadius: 12, background: loading ? 'rgba(124,58,237,0.4)' : 'linear-gradient(135deg,#7c3aed,#06b6d4)', border: 'none', color: '#0a0a14', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
             >
               {loading ? 'Procesando...' : 'Comprar · Poner en Escrow'}
             </button>
@@ -379,7 +379,7 @@ function ListingDetailModal({ listing: initialListing, user, onClose, onUpdate }
             <button
               onClick={handleRelease}
               disabled={loading}
-              style={{ width: '100%', padding: '13px 0', borderRadius: 12, background: loading ? 'rgba(16,185,129,0.3)' : 'linear-gradient(135deg,#059669,#10b981)', border: 'none', color: '#fff', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
+              style={{ width: '100%', padding: '13px 0', borderRadius: 12, background: loading ? 'rgba(16,185,129,0.3)' : 'linear-gradient(135deg,#059669,#10b981)', border: 'none', color: '#0a0a14', fontSize: 15, fontWeight: 700, cursor: loading ? 'default' : 'pointer', fontFamily: 'inherit' }}
             >
               {loading ? 'Procesando...' : 'Confirmar recepción · Liberar fondos'}
             </button>
@@ -535,7 +535,7 @@ export default function Marketplace() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 80 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 80 }}>
       <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 16px' }}>
 
         <div style={{ paddingTop: 72, paddingBottom: 8 }}>
@@ -577,11 +577,11 @@ export default function Marketplace() {
                 style={{
                   width: '100%',
                   boxSizing: 'border-box',
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(79,172,254,0.07)',
+                  border: '1px solid rgba(79,172,254,0.2)',
                   borderRadius: 12,
                   padding: '11px 16px',
-                  color: '#fff',
+                  color: '#0a0a14',
                   fontSize: 14,
                   outline: 'none',
                   fontFamily: 'inherit',
@@ -617,7 +617,7 @@ export default function Marketplace() {
             {loading ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 14 }}>
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, height: 240, animation: 'pulse 1.5s ease-in-out infinite' }} />
+                  <div key={i} style={{ background: 'rgba(79,172,254,0.04)', borderRadius: 16, height: 240, animation: 'pulse 1.5s ease-in-out infinite' }} />
                 ))}
               </div>
             ) : listings.length === 0 ? (
@@ -638,7 +638,7 @@ export default function Marketplace() {
                 <button
                   onClick={() => setPage(p => Math.max(1, p - 1))}
                   disabled={page <= 1}
-                  style={{ padding: '8px 20px', borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: page <= 1 ? 'rgba(255,255,255,0.2)' : '#fff', cursor: page <= 1 ? 'default' : 'pointer', fontFamily: 'inherit' }}
+                  style={{ padding: '8px 20px', borderRadius: 10, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', color: page <= 1 ? 'rgba(255,255,255,0.2)' : '#fff', cursor: page <= 1 ? 'default' : 'pointer', fontFamily: 'inherit' }}
                 >
                   ← Anterior
                 </button>
@@ -648,7 +648,7 @@ export default function Marketplace() {
                 <button
                   onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                   disabled={page >= totalPages}
-                  style={{ padding: '8px 20px', borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: page >= totalPages ? 'rgba(255,255,255,0.2)' : '#fff', cursor: page >= totalPages ? 'default' : 'pointer', fontFamily: 'inherit' }}
+                  style={{ padding: '8px 20px', borderRadius: 10, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', color: page >= totalPages ? 'rgba(255,255,255,0.2)' : '#fff', cursor: page >= totalPages ? 'default' : 'pointer', fontFamily: 'inherit' }}
                 >
                   Siguiente →
                 </button>

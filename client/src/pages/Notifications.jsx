@@ -72,7 +72,7 @@ export default function NotificationsPage() {
     : notifications;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 100 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 100 }}>
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '16px' }}>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
@@ -138,7 +138,7 @@ export default function NotificationsPage() {
                         </div>
                       )}
                       {sender?.avatar && (
-                        <div style={{ position: 'absolute', bottom: -2, right: -2, width: 18, height: 18, borderRadius: '50%', background: '#08080f', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}>
+                        <div style={{ position: 'absolute', bottom: -2, right: -2, width: 18, height: 18, borderRadius: '50%', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}>
                           {meta.icon}
                         </div>
                       )}
@@ -146,7 +146,7 @@ export default function NotificationsPage() {
 
                     {/* Text */}
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ color: '#fff', fontSize: 13, lineHeight: 1.4 }}>
+                      <div style={{ color: '#0a0a14', fontSize: 13, lineHeight: 1.4 }}>
                         {sender && (
                           <span style={{ fontWeight: 700 }}>
                             {sender.firstName || sender.username}{' '}

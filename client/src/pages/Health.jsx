@@ -22,7 +22,7 @@ function formatDateHeader() {
 function ProgressBar({ value, max, color = '#7c3aed' }) {
   const pct = Math.min(100, Math.round((value / max) * 100));
   return (
-    <div style={{ width: '100%', height: 6, background: 'rgba(255,255,255,0.08)', borderRadius: 6, overflow: 'hidden', marginTop: 8 }}>
+    <div style={{ width: '100%', height: 6, background: 'rgba(79,172,254,0.07)', borderRadius: 6, overflow: 'hidden', marginTop: 8 }}>
       <div style={{
         height: '100%',
         width: `${pct}%`,
@@ -97,7 +97,7 @@ function MetricCard({ emoji, label, value, onChange, goal, unit, color, min = 0,
               }}
             />
           ) : (
-            <div style={{ color: '#fff', fontSize: 24, fontWeight: 800, lineHeight: 1.2 }}>
+            <div style={{ color: '#0a0a14', fontSize: 24, fontWeight: 800, lineHeight: 1.2 }}>
               {value.toLocaleString()}
               <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, fontWeight: 400, marginLeft: 4 }}>{unit}</span>
             </div>
@@ -127,7 +127,7 @@ function WeeklyChart({ history }) {
 
   return (
     <GlassCard style={{ marginBottom: 16 }}>
-      <div style={{ color: '#fff', fontSize: 14, fontWeight: 700, marginBottom: 16 }}>
+      <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 700, marginBottom: 16 }}>
         📈 Pasos — Últimos 7 días
       </div>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 80 }}>
@@ -250,7 +250,7 @@ export default function Health() {
   const tc = toastColors[toast.type] || toastColors.info;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 100 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 100 }}>
       {/* Toast */}
       {toast.msg && (
         <div style={{
@@ -346,7 +346,7 @@ export default function Health() {
 
             {/* Mood selector */}
             <GlassCard style={{ marginBottom: 16 }}>
-              <div style={{ color: '#fff', fontSize: 14, fontWeight: 700, marginBottom: 14 }}>
+              <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 700, marginBottom: 14 }}>
                 ¿Cómo te sientes hoy?
               </div>
               <div style={{ display: 'flex', gap: 8, justifyContent: 'space-between' }}>
@@ -382,7 +382,7 @@ export default function Health() {
 
             {/* Notes */}
             <GlassCard style={{ marginBottom: 16 }}>
-              <div style={{ color: '#fff', fontSize: 14, fontWeight: 700, marginBottom: 12 }}>
+              <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 700, marginBottom: 12 }}>
                 📝 Notas del día
               </div>
               <textarea
@@ -392,11 +392,11 @@ export default function Health() {
                 rows={3}
                 style={{
                   width: '100%',
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(79,172,254,0.04)',
+                  border: '1px solid rgba(79,172,254,0.15)',
                   borderRadius: 10,
                   padding: '10px 12px',
-                  color: '#fff',
+                  color: '#0a0a14',
                   fontSize: 13,
                   outline: 'none',
                   resize: 'none',

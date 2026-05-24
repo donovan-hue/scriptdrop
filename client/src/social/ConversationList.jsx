@@ -40,17 +40,17 @@ function CreateGroupModal({ onClose, onCreated }) {
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 999, background: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <GlassCard style={{ width: '90%', maxWidth: 420 }}>
-        <div style={{ color: '#fff', fontSize: 17, fontWeight: 700, marginBottom: 16 }}>Nuevo Grupo</div>
+        <div style={{ color: '#0a0a14', fontSize: 17, fontWeight: 700, marginBottom: 16 }}>Nuevo Grupo</div>
         <input value={name} onChange={e => setName(e.target.value)} placeholder="Nombre del grupo *"
-          style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '9px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+          style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 10, padding: '9px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
         <input value={description} onChange={e => setDescription(e.target.value)} placeholder="Descripción (opcional)"
-          style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '9px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+          style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 10, padding: '9px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
         <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar y añadir miembros..."
-          style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '9px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 8, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+          style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 10, padding: '9px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 8, boxSizing: 'border-box', fontFamily: 'inherit' }} />
         {results.map(u => (
           <div key={u._id} onClick={() => toggle(u)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 4px', cursor: 'pointer' }}>
             <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=32`} alt="" style={{ width: 32, height: 32, borderRadius: '50%' }} />
-            <div style={{ flex: 1, color: '#fff', fontSize: 13 }}>{u.firstName} {u.lastName} <span style={{ color: 'rgba(255,255,255,0.4)' }}>@{u.username}</span></div>
+            <div style={{ flex: 1, color: '#0a0a14', fontSize: 13 }}>{u.firstName} {u.lastName} <span style={{ color: 'rgba(255,255,255,0.4)' }}>@{u.username}</span></div>
             <span style={{ fontSize: 16 }}>{selected.find(p => p._id === u._id) ? '✅' : '⬜'}</span>
           </div>
         ))}
@@ -60,7 +60,7 @@ function CreateGroupModal({ onClose, onCreated }) {
           </div>
         )}
         <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
-          <button onClick={onClose} style={{ flex: 1, padding: '10px', borderRadius: 12, background: 'rgba(255,255,255,0.08)', color: '#fff', border: 'none', cursor: 'pointer' }}>Cancelar</button>
+          <button onClick={onClose} style={{ flex: 1, padding: '10px', borderRadius: 12, background: 'rgba(79,172,254,0.07)', color: '#0a0a14', border: 'none', cursor: 'pointer' }}>Cancelar</button>
           <button onClick={handleCreate} disabled={loading || !name.trim()}
             style={{ flex: 2, padding: '10px', borderRadius: 12, background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 700 }}>
             {loading ? 'Creando...' : 'Crear Grupo'}
@@ -102,7 +102,7 @@ export default function ConversationList() {
   }, [search]);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 80 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 80 }}>
       <div style={{ padding: '16px', maxWidth: 680, margin: '0 auto' }}>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
@@ -136,7 +136,7 @@ export default function ConversationList() {
           <div style={{ position: 'relative', marginBottom: 16 }}>
             <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', fontSize: 16 }}>🔍</span>
             <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar personas..."
-              style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 24, padding: '10px 14px 10px 40px', color: '#fff', fontSize: 14, outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' }} />
+              style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 24, padding: '10px 14px 10px 40px', color: '#0a0a14', fontSize: 14, outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' }} />
           </div>
         )}
 

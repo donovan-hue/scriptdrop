@@ -109,7 +109,7 @@ function IncomingCallModal({ callerName, onAccept, onReject }) {
     <div style={{ position: 'fixed', inset: 0, zIndex: 9100, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <GlassCard style={{ textAlign: 'center', padding: 40, maxWidth: 320 }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>📲</div>
-        <div style={{ color: '#fff', fontSize: 18, fontWeight: 700, marginBottom: 4 }}>Llamada entrante</div>
+        <div style={{ color: '#0a0a14', fontSize: 18, fontWeight: 700, marginBottom: 4 }}>Llamada entrante</div>
         <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, marginBottom: 28 }}>{callerName}</div>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
           <button onClick={onReject} style={{ width: 56, height: 56, borderRadius: '50%', background: '#ef4444', border: 'none', fontSize: 22, cursor: 'pointer' }}>📵</button>
@@ -172,7 +172,7 @@ function LiveStreamer({ socket, streamerId, streamerName, onStop }) {
     <div style={{ display: 'flex', gap: 16, height: 480 }}>
       <div style={{ flex: 1, position: 'relative', background: '#111', borderRadius: 16, overflow: 'hidden' }}>
         <video ref={videoRef} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        {live && <div style={{ position: 'absolute', top: 12, left: 12, background: '#ef4444', color: '#fff', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20 }}>🔴 EN VIVO</div>}
+        {live && <div style={{ position: 'absolute', top: 12, left: 12, background: '#ef4444', color: '#0a0a14', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20 }}>🔴 EN VIVO</div>}
         <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
           {!live
             ? <button onClick={startStream} style={{ padding: '12px 32px', borderRadius: 28, background: '#ef4444', color: '#fff', border: 'none', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Iniciar Stream</button>
@@ -184,7 +184,7 @@ function LiveStreamer({ socket, streamerId, streamerName, onStop }) {
         <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12 }}>Chat del stream</div>
         <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 6 }}>
           {chatMessages.map((m, i) => (
-            <div key={i} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 8, padding: '6px 10px' }}>
+            <div key={i} style={{ background: 'rgba(79,172,254,0.07)', borderRadius: 8, padding: '6px 10px' }}>
               <span style={{ color: '#a855f7', fontSize: 11, fontWeight: 700 }}>{m.username}: </span>
               <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 12 }}>{m.message}</span>
             </div>
@@ -192,7 +192,7 @@ function LiveStreamer({ socket, streamerId, streamerName, onStop }) {
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
           <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && sendChat()} placeholder="Mensaje..."
-            style={{ flex: 1, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '7px 12px', color: '#fff', fontSize: 12, outline: 'none', fontFamily: 'inherit' }} />
+            style={{ flex: 1, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 20, padding: '7px 12px', color: '#0a0a14', fontSize: 12, outline: 'none', fontFamily: 'inherit' }} />
           <button onClick={sendChat} style={{ padding: '7px 12px', borderRadius: 20, background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', color: '#fff', border: 'none', cursor: 'pointer', fontSize: 12 }}>→</button>
         </div>
       </div>
@@ -267,8 +267,8 @@ function LiveViewer({ socket, stream, currentUser }) {
       <div style={{ flex: 1, background: '#111', borderRadius: 16, overflow: 'hidden', position: 'relative' }}>
         <video ref={videoRef} autoPlay playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <div style={{ position: 'absolute', top: 12, left: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
-          <div style={{ background: '#ef4444', color: '#fff', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20 }}>🔴 EN VIVO</div>
-          <div style={{ background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: 12, padding: '4px 10px', borderRadius: 20 }}>👁 {viewerCount}</div>
+          <div style={{ background: '#ef4444', color: '#0a0a14', fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 20 }}>🔴 EN VIVO</div>
+          <div style={{ background: 'rgba(0,0,0,0.6)', color: '#0a0a14', fontSize: 12, padding: '4px 10px', borderRadius: 20 }}>👁 {viewerCount}</div>
         </div>
         <div style={{ position: 'absolute', bottom: 12, left: 0, right: 0, textAlign: 'center', color: 'rgba(255,255,255,0.8)', fontSize: 13, fontWeight: 600, textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
           {stream.streamerName}
@@ -308,7 +308,7 @@ function LiveViewer({ socket, stream, currentUser }) {
         <div style={{ display: 'flex', gap: 4, justifyContent: 'center', paddingBottom: 4 }}>
           {LIVE_REACTIONS.map(emoji => (
             <button key={emoji} onClick={() => sendReaction(emoji)}
-              style={{ background: 'rgba(255,255,255,0.06)', border: 'none', borderRadius: 8, padding: '5px 7px', fontSize: 16, cursor: 'pointer', transition: 'transform 0.1s', lineHeight: 1 }}
+              style={{ background: 'rgba(79,172,254,0.07)', border: 'none', borderRadius: 8, padding: '5px 7px', fontSize: 16, cursor: 'pointer', transition: 'transform 0.1s', lineHeight: 1 }}
               onMouseDown={e => e.currentTarget.style.transform = 'scale(1.3)'}
               onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}>
               {emoji}
@@ -319,7 +319,7 @@ function LiveViewer({ socket, stream, currentUser }) {
         {/* Chat input */}
         <div style={{ display: 'flex', gap: 6 }}>
           <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && sendChat()} placeholder="Mensaje..."
-            style={{ flex: 1, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '7px 12px', color: '#fff', fontSize: 12, outline: 'none', fontFamily: 'inherit' }} />
+            style={{ flex: 1, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 20, padding: '7px 12px', color: '#0a0a14', fontSize: 12, outline: 'none', fontFamily: 'inherit' }} />
           <button onClick={sendChat} style={{ padding: '7px 12px', borderRadius: 20, background: 'linear-gradient(135deg,#7c3aed,#06b6d4)', color: '#fff', border: 'none', cursor: 'pointer', fontSize: 12 }}>→</button>
         </div>
       </div>
@@ -402,7 +402,7 @@ export default function Live() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 80 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 80 }}>
       <div style={{ padding: '16px', maxWidth: 760, margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
           <HoloText size={26}>LIVE</HoloText>
@@ -433,7 +433,7 @@ export default function Live() {
               <>
                 <GlassCard style={{ marginBottom: 20, textAlign: 'center' }}>
                   <div style={{ fontSize: 40, marginBottom: 8 }}>🎬</div>
-                  <div style={{ color: '#fff', fontSize: 16, fontWeight: 700, marginBottom: 6 }}>¿Quieres transmitir?</div>
+                  <div style={{ color: '#0a0a14', fontSize: 16, fontWeight: 700, marginBottom: 6 }}>¿Quieres transmitir?</div>
                   <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, marginBottom: 16 }}>Tu audiencia te está esperando</div>
                   <button onClick={() => setStreaming(true)}
                     style={{ padding: '12px 32px', borderRadius: 28, background: 'linear-gradient(135deg,#ef4444,#f59e0b)', color: '#fff', border: 'none', fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
@@ -455,9 +455,9 @@ export default function Live() {
                     {/* Thumbnail banner */}
                     <div style={{ height: 100, background: 'linear-gradient(135deg,#1a0533,#0c1a3d)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <div style={{ fontSize: 36 }}>📺</div>
-                      <div style={{ position: 'absolute', top: 8, left: 8, background: '#ef4444', color: '#fff', fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 20 }}>🔴 LIVE</div>
+                      <div style={{ position: 'absolute', top: 8, left: 8, background: '#ef4444', color: '#0a0a14', fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 20 }}>🔴 LIVE</div>
                       {s.viewers > 0 && (
-                        <div style={{ position: 'absolute', top: 8, right: 8, background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: 10, padding: '3px 8px', borderRadius: 20 }}>👁 {s.viewers}</div>
+                        <div style={{ position: 'absolute', top: 8, right: 8, background: 'rgba(0,0,0,0.6)', color: '#0a0a14', fontSize: 10, padding: '3px 8px', borderRadius: 20 }}>👁 {s.viewers}</div>
                       )}
                     </div>
                     <div style={{ padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -492,9 +492,9 @@ export default function Live() {
         {/* VIDEO CALL TAB */}
         {tab === 'videocall' && !inCall && (
           <GlassCard>
-            <div style={{ color: '#fff', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Llamar a alguien</div>
+            <div style={{ color: '#0a0a14', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Llamar a alguien</div>
             <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Buscar usuarios..."
-              style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '10px 16px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 16, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+              style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', borderRadius: 20, padding: '10px 16px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 16, boxSizing: 'border-box', fontFamily: 'inherit' }} />
             {searchUsers.map(u => (
               <div key={u._id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 4px' }}>
                 <img src={u.avatar || `https://ui-avatars.com/api/?name=${u.username}&background=random&color=fff&size=40`} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }} />

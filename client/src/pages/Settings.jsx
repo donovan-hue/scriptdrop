@@ -50,7 +50,7 @@ function PrivacyTab() {
         {items.map((item, i) => (
           <div key={item.key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 0', borderBottom: i < items.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
             <div>
-              <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>{item.label}</div>
+              <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600 }}>{item.label}</div>
               <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 2 }}>{item.desc}</div>
             </div>
             <button onClick={() => toggle(item.key)}
@@ -96,7 +96,7 @@ function NotificationsTab() {
           <div key={item.key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 0', borderBottom: i < items.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <span style={{ fontSize: 20 }}>{item.icon}</span>
-              <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>{item.label}</div>
+              <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600 }}>{item.label}</div>
             </div>
             <button onClick={() => toggle(item.key)}
               style={{ width: 48, height: 26, borderRadius: 13, border: 'none', cursor: 'pointer', background: prefs[item.key] ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.1)', position: 'relative', transition: 'background 0.3s', flexShrink: 0 }}>
@@ -126,7 +126,7 @@ function AppearanceTab() {
     <div>
       <GlassCard style={{ marginBottom: 12 }}>
         <div style={{ marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Color de acento</div>
+          <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Color de acento</div>
           <div style={{ display: 'flex', gap: 10 }}>
             {accents.map(c => (
               <button key={c} onClick={() => setAccent(c)}
@@ -136,11 +136,11 @@ function AppearanceTab() {
         </div>
 
         <div style={{ marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Tamaño de texto</div>
+          <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Tamaño de texto</div>
           <div style={{ display: 'flex', gap: 8 }}>
             {['small', 'normal', 'large'].map(size => (
               <button key={size} onClick={() => setFontSize(size)}
-                style={{ flex: 1, padding: '8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: fontSize === size ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.06)', color: '#fff', fontSize: size === 'small' ? 11 : size === 'normal' ? 13 : 15, fontWeight: 600 }}>
+                style={{ flex: 1, padding: '8px', borderRadius: 10, border: 'none', cursor: 'pointer', background: fontSize === size ? 'linear-gradient(135deg,#7c3aed,#06b6d4)' : 'rgba(255,255,255,0.06)', color: '#0a0a14', fontSize: size === 'small' ? 11 : size === 'normal' ? 13 : 15, fontWeight: 600 }}>
                 {size === 'small' ? 'Pequeño' : size === 'normal' ? 'Normal' : 'Grande'}
               </button>
             ))}
@@ -149,7 +149,7 @@ function AppearanceTab() {
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ color: '#fff', fontSize: 14, fontWeight: 600 }}>Animaciones</div>
+            <div style={{ color: '#0a0a14', fontSize: 14, fontWeight: 600 }}>Animaciones</div>
             <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 2 }}>Transiciones y efectos visuales</div>
           </div>
           <button onClick={() => setAnimations(a => !a)}
@@ -163,7 +163,7 @@ function AppearanceTab() {
       <GlassCard style={{ marginBottom: 12, textAlign: 'center', padding: '20px' }}>
         <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Vista previa</div>
         <div style={{ color: accent, fontSize: 18, fontWeight: 800, marginBottom: 4 }}>Kronos</div>
-        <div style={{ color: '#fff', fontSize: fontSize === 'small' ? 12 : fontSize === 'large' ? 16 : 14 }}>Así se verá el texto en la app</div>
+        <div style={{ color: '#0a0a14', fontSize: fontSize === 'small' ? 12 : fontSize === 'large' ? 16 : 14 }}>Así se verá el texto en la app</div>
       </GlassCard>
 
       <button onClick={() => setSaved(true)}
@@ -216,13 +216,13 @@ function AccountTab() {
         ].map(item => (
           <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '11px 0', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
             <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13 }}>{item.label}</span>
-            <span style={{ color: '#fff', fontSize: 13, fontWeight: 600 }}>{item.value || '—'}</span>
+            <span style={{ color: '#0a0a14', fontSize: 13, fontWeight: 600 }}>{item.value || '—'}</span>
           </div>
         ))}
       </GlassCard>
 
       <button onClick={handleExportData}
-        style={{ width: '100%', padding: '13px', borderRadius: 14, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: 14, fontWeight: 600, cursor: 'pointer', marginBottom: 10 }}>
+        style={{ width: '100%', padding: '13px', borderRadius: 14, background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(79,172,254,0.2)', color: '#0a0a14', fontSize: 14, fontWeight: 600, cursor: 'pointer', marginBottom: 10 }}>
         📦 Exportar mis datos
       </button>
 
@@ -244,10 +244,10 @@ function AccountTab() {
             Se eliminarán tu cuenta, posts, wallet y todos tus datos. Escribe <strong style={{ color: '#fff' }}>ELIMINAR</strong> para confirmar.
           </div>
           <input value={deleteInput} onChange={e => setDeleteInput(e.target.value)} placeholder="Escribe ELIMINAR"
-            style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 10, padding: '10px 14px', color: '#fff', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
+            style={{ width: '100%', background: 'rgba(79,172,254,0.07)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 10, padding: '10px 14px', color: '#0a0a14', fontSize: 14, outline: 'none', marginBottom: 10, boxSizing: 'border-box', fontFamily: 'inherit' }} />
           <div style={{ display: 'flex', gap: 8 }}>
             <button onClick={() => { setConfirmDelete(false); setDeleteInput(''); }}
-              style={{ flex: 1, padding: '10px', borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: 'none', color: '#fff', cursor: 'pointer', fontSize: 13 }}>
+              style={{ flex: 1, padding: '10px', borderRadius: 10, background: 'rgba(79,172,254,0.07)', border: 'none', color: '#0a0a14', cursor: 'pointer', fontSize: 13 }}>
               Cancelar
             </button>
             <button onClick={handleDeleteAccount} disabled={deleteInput !== 'ELIMINAR' || deleting}
@@ -267,10 +267,10 @@ export default function Settings() {
   const [activeTab, setActiveTab] = useState(tabParam || '2fa');
 
   return (
-    <div style={{ minHeight: '100vh', background: '#08080f', paddingBottom: 100 }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff', paddingBottom: 100 }}>
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '16px' }}>
         <div style={{ marginBottom: 20 }}>
-          <div style={{ color: '#fff', fontSize: 22, fontWeight: 800 }}>Configuración</div>
+          <div style={{ color: '#0a0a14', fontSize: 22, fontWeight: 800 }}>Configuración</div>
           <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 13, marginTop: 2 }}>Cuenta, privacidad y apariencia</div>
         </div>
 
