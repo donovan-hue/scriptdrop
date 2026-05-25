@@ -38,26 +38,25 @@ export default function Welcome() {
       {/* ── HERO ── */}
       <div style={{ textAlign: 'center', marginBottom: 40, position: 'relative', zIndex: 2 }}>
 
-        {/* Logo K 3D animado */}
+        {/* Círculo K tornasol — igual al de login/registro */}
         <div style={{
-          width: 140, height: 140, borderRadius: '50%',
-          background: HOLO,
+          width: 110, height: 110, borderRadius: '50%',
+          background: 'linear-gradient(135deg,#EC4899,#8B5CF6,#06B6D4)',
           backgroundSize: '200% 200%',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           margin: '0 auto 24px',
-          boxShadow: '0 0 60px rgba(139,92,246,0.5), 0 0 100px rgba(236,72,153,0.3)',
-          animation: 'k-spin 12s linear infinite, tornasol-hero 8s ease-in-out infinite',
+          boxShadow: '0 0 50px rgba(139,92,246,0.55), 0 0 90px rgba(6,182,212,0.25)',
+          animation: 'tornasol-hero 5s ease-in-out infinite',
           position: 'relative',
         }}>
-          {/* Brillo interior */}
           <div style={{
-            position: 'absolute', top: '12%', left: '20%', width: '60%', height: '35%',
+            position: 'absolute', top: '10%', left: '18%', width: '55%', height: '32%',
             background: 'linear-gradient(180deg,rgba(255,255,255,0.5) 0%,transparent 100%)',
-            borderRadius: '50%', filter: 'blur(4px)',
+            borderRadius: '50%', filter: 'blur(3px)',
           }} />
           <span style={{
-            fontSize: 72, fontWeight: 900, color: '#fff',
-            textShadow: '0 4px 20px rgba(0,0,0,0.3)',
+            fontSize: 54, fontWeight: 900, color: '#fff',
+            textShadow: '0 3px 14px rgba(0,0,0,0.3)',
             lineHeight: 1, position: 'relative', zIndex: 1,
           }}>K</span>
         </div>
@@ -152,10 +151,6 @@ export default function Welcome() {
 
       {/* ── KEYFRAMES ── */}
       <style>{`
-        @keyframes k-spin {
-          0%   { transform: rotateY(0deg);   }
-          100% { transform: rotateY(360deg); }
-        }
         @keyframes tornasol-hero {
           0%,100% { background-position: 0% 50%;   }
           50%      { background-position: 100% 50%; }

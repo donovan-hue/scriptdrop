@@ -63,9 +63,34 @@ function Register() {
       <div style={{ width: '100%', maxWidth: 400 }}>
 
         <div style={{ textAlign: 'center', marginBottom: 28 }}>
-          <div style={{ fontSize: 44, marginBottom: 8 }}>⭐</div>
-          <HoloText size={34}>KRONOS</HoloText>
-          <div style={{ color: 'rgba(10,10,20,0.45)', fontSize: 13, marginTop: 6 }}>Crea tu cuenta</div>
+          {/* Círculo K tornasol */}
+          <div style={{
+            width: 90, height: 90, borderRadius: '50%',
+            background: 'linear-gradient(135deg,#EC4899,#8B5CF6,#06B6D4)',
+            backgroundSize: '200% 200%',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            margin: '0 auto 20px',
+            boxShadow: '0 0 40px rgba(139,92,246,0.5), 0 0 70px rgba(6,182,212,0.2)',
+            animation: 'tornasol-k 5s ease-in-out infinite',
+            position: 'relative',
+          }}>
+            <div style={{
+              position: 'absolute', top: '10%', left: '18%', width: '55%', height: '32%',
+              background: 'linear-gradient(180deg,rgba(255,255,255,0.5) 0%,transparent 100%)',
+              borderRadius: '50%', filter: 'blur(3px)',
+            }} />
+            <span style={{ fontSize: 42, fontWeight: 900, color: '#fff', textShadow: '0 2px 12px rgba(0,0,0,0.3)', position: 'relative', zIndex: 1 }}>K</span>
+          </div>
+          <div style={{
+            fontSize: 'clamp(36px, 10vw, 52px)', fontWeight: 900, letterSpacing: 8,
+            background: 'linear-gradient(90deg,#EC4899,#8B5CF6,#06B6D4,#8B5CF6,#EC4899)',
+            backgroundSize: '300% 300%',
+            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+            animation: 'tornasol-k 5s ease-in-out infinite',
+            filter: 'drop-shadow(0 3px 12px rgba(139,92,246,0.4))',
+            marginBottom: 6,
+          }}>KRONOS</div>
+          <style>{`@keyframes tornasol-k { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }`}</style>
         </div>
 
         {/* Selector Email / Teléfono */}
