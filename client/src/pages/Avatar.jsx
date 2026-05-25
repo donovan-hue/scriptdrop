@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+﻿import React, { useState, useEffect, useContext, useCallback } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { GlassCard, BottomNav } from '../components/kronos';
@@ -374,7 +374,7 @@ export default function AvatarPage() {
       width: '100%',
       padding: '7px 0',
       borderRadius: 8,
-      border: 'none',
+      border: variant === 'equip' ? '1px solid rgba(6,182,212,0.4)' : 'none',
       cursor: 'pointer',
       fontFamily: "'Outfit', sans-serif",
       fontWeight: 700,
@@ -385,7 +385,6 @@ export default function AvatarPage() {
           ? 'rgba(6,182,212,0.2)'
           : 'rgba(255,255,255,0.06)',
       color: variant === 'equipped' ? 'rgba(255,255,255,0.4)' : '#fff',
-      border: variant === 'equip' ? '1px solid rgba(6,182,212,0.4)' : 'none',
     }),
     msgBox: (isError) => ({
       position: 'fixed',

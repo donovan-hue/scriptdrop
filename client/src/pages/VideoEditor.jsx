@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { GlassCard, BottomNav } from '../components/kronos';
 
 const CSS_FILTERS = [
@@ -256,7 +256,7 @@ export default function VideoEditor() {
     btn: (active, variant) => ({
       padding: '8px 14px',
       borderRadius: 8,
-      border: active ? 'none' : '1px solid rgba(255,255,255,0.1)',
+      border: variant === 'danger' ? '1px solid rgba(239,68,68,0.3)' : (active ? 'none' : '1px solid rgba(79,172,254,0.2)'),
       cursor: 'pointer',
       fontFamily: "'Outfit', sans-serif",
       fontWeight: 600,
@@ -266,8 +266,7 @@ export default function VideoEditor() {
         : variant === 'danger'
           ? 'rgba(239,68,68,0.1)'
           : 'rgba(255,255,255,0.05)',
-      color: variant === 'danger' ? '#f87171' : '#fff',
-      border: variant === 'danger' ? '1px solid rgba(239,68,68,0.3)' : (active ? 'none' : '1px solid rgba(255,255,255,0.1)'),
+      color: variant === 'danger' ? '#f87171' : '#0a0a14',
     }),
     input: {
       background: 'rgba(79,172,254,0.07)',

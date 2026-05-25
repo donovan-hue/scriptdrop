@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from 'react';
+﻿import React, { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { GlassCard, HoloText, BottomNav } from '../components/kronos';
@@ -25,7 +25,6 @@ function timeAgo(date) {
 }
 
 export default function NotificationsPage() {
-  useContext(AuthContext);
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);

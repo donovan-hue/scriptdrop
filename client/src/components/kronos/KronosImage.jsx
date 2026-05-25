@@ -59,15 +59,12 @@ export default function KronosImage({
 
   const baseStyle = {
     display: 'block',
-    width: width ? `${width}px` : (style.width ?? '100%'),
-    height: height ? `${height}px` : (style.height ?? 'auto'),
     objectFit: style.objectFit ?? 'cover',
     borderRadius,
     transition: 'opacity 0.25s ease',
     opacity: (placeholder === 'blur' && !loaded) ? 0 : 1,
     background: loaded ? 'transparent' : 'rgba(255,255,255,0.06)',
     ...style,
-    // override explicito para no duplicar
     width: width ? `${width}px` : (style.width ?? '100%'),
     height: height ? `${height}px` : (style.height ?? 'auto'),
   };
