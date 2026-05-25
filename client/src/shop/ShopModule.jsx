@@ -16,7 +16,15 @@ const CARD_STYLE = {
   transition: 'all 0.2s',
 };
 
-const CATEGORIES = ['Todos','Ropa','Electrónica','Accesorios','Arte','Deportes','Hogar'];
+const CATEGORIES = [
+  { label: 'Todos',       value: '' },
+  { label: 'Playeras',    value: 'shirts' },
+  { label: 'Pantalones',  value: 'pants' },
+  { label: 'Vestidos',    value: 'dresses' },
+  { label: 'Zapatos',     value: 'shoes' },
+  { label: 'Accesorios',  value: 'accessories' },
+  { label: 'Chamarras',   value: 'outerwear' },
+];
 
 // ── Producto Card ────────────────────────────────────────────────────
 function ProductCard({ product, onAddToCart, onClick }) {
@@ -50,6 +58,11 @@ function ProductCard({ product, onAddToCart, onClick }) {
         )}
       </div>
       <div style={{ padding: '14px 16px' }}>
+        {product.seller?.username && (
+          <div style={{ fontSize: 10, color: '#4facfe', fontWeight: 700, marginBottom: 3, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+            🏪 {product.seller.firstName || product.seller.username}
+          </div>
+        )}
         <div style={{ fontWeight: 700, fontSize: 14, color: '#0a0a14', marginBottom: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {product.name}
         </div>
@@ -81,12 +94,12 @@ function ProductCard({ product, onAddToCart, onClick }) {
 // ── Lista de productos ───────────────────────────────────────────────
 function ProductList({ products, cart, onAddToCart, onViewProduct }) {
   const navigate = useNavigate();
-  const [category, setCategory] = useState('Todos');
+  const [category, setCategory] = useState('');
   const [search, setSearch] = useState('');
 
   const filtered = products.filter(p => {
-    const matchCat = category === 'Todos' || (p.category || '').toLowerCase() === category.toLowerCase();
-    const matchSearch = p.name?.toLowerCase().includes(search.toLowerCase());
+    const matchCat = !category || p.category === category;
+    const matchSearch = !search || p.name?.toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;
   });
 
@@ -120,13 +133,13 @@ function ProductList({ products, cart, onAddToCart, onViewProduct }) {
         />
         <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4 }}>
           {CATEGORIES.map(cat => (
-            <button key={cat} onClick={() => setCategory(cat)}
+            <button key={cat.value} onClick={() => setCategory(cat.value)}
               style={{ padding: '6px 14px', borderRadius: 20, border: '1.5px solid', whiteSpace: 'nowrap', fontSize: 12, fontWeight: 600, cursor: 'pointer', flexShrink: 0, fontFamily: 'inherit',
-                borderColor: category === cat ? 'transparent' : 'rgba(79,172,254,0.2)',
-                background: category === cat ? HOLO : '#fff',
-                color: category === cat ? '#fff' : 'rgba(10,10,20,0.5)',
+                borderColor: category === cat.value ? 'transparent' : 'rgba(79,172,254,0.2)',
+                background: category === cat.value ? HOLO : '#fff',
+                color: category === cat.value ? '#fff' : 'rgba(10,10,20,0.5)',
               }}>
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>

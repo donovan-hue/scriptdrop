@@ -528,6 +528,47 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
+// Auto-seed demo products if collection is empty
+if (process.env.NODE_ENV !== 'test') {
+  const mongoose = require('mongoose');
+  const seedProducts = async () => {
+    await new Promise(resolve => setTimeout(resolve, 3000)); // wait for DB connection
+    try {
+      const Product = require('./models/Product');
+      const User = require('./models/User');
+      const bcryptjs = require('bcryptjs');
+      const count = await Product.countDocuments();
+      if (count > 0) return;
+
+      let seller = await User.findOne({ username: 'kronostienda' });
+      if (!seller) {
+        const hash = await bcryptjs.hash('kronos123', 10);
+        seller = await User.create({
+          username: 'kronostienda', email: 'tienda@kronos.app', password: hash,
+          firstName: 'Kronos', lastName: 'Tienda', role: 'seller',
+          bio: 'Tienda oficial de ropa Kronos',
+          avatar: 'https://ui-avatars.com/api/?name=Kronos+Tienda&background=7c3aed&color=fff&size=150',
+        });
+      }
+
+      await Product.insertMany([
+        { seller: seller._id, name: 'Playera Kronos Negra', description: 'Playera premium con logo Kronos bordado, tela 100% algodón.', price: 299, originalPrice: 399, category: 'shirts', images: ['https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&q=80'], sizes: [{ size: 'S', stock: 5 }, { size: 'M', stock: 10 }, { size: 'L', stock: 8 }], colors: ['Negro'], rating: 4.8, inStock: true },
+        { seller: seller._id, name: 'Sudadera Morada Kronos', description: 'Sudadera con capucha, diseño exclusivo Kronos. Cálida y cómoda.', price: 599, originalPrice: 799, category: 'outerwear', images: ['https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80'], sizes: [{ size: 'S', stock: 3 }, { size: 'M', stock: 7 }, { size: 'L', stock: 5 }], colors: ['Morado', 'Negro'], rating: 4.9, inStock: true },
+        { seller: seller._id, name: 'Jogger Urbano', description: 'Pantalón jogger estilo streetwear, cintura elástica, bolsillos laterales.', price: 449, category: 'pants', images: ['https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80'], sizes: [{ size: 'S', stock: 4 }, { size: 'M', stock: 9 }, { size: 'L', stock: 6 }], colors: ['Gris', 'Negro'], rating: 4.6, inStock: true },
+        { seller: seller._id, name: 'Tenis Kronos Run', description: 'Tenis deportivos ligeros con suela antideslizante y plantilla ergonómica.', price: 1299, originalPrice: 1599, category: 'shoes', images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80'], sizes: [{ size: '26', stock: 5 }, { size: '27', stock: 4 }, { size: '28', stock: 3 }], colors: ['Blanco/Negro', 'Todo negro'], rating: 4.7, inStock: true },
+        { seller: seller._id, name: 'Vestido Galaxia', description: 'Vestido corto con estampado galáctico, corte tipo A. Ideal para salir.', price: 699, category: 'dresses', images: ['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80'], sizes: [{ size: 'XS', stock: 2 }, { size: 'S', stock: 4 }, { size: 'M', stock: 6 }], colors: ['Azul galaxia', 'Negro'], rating: 4.5, inStock: true },
+        { seller: seller._id, name: 'Gorra Snapback Kronos', description: 'Gorra ajustable con parche bordado Kronos, visera plana.', price: 199, category: 'accessories', images: ['https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&q=80'], sizes: [{ size: 'Única', stock: 20 }], colors: ['Negro', 'Blanco'], rating: 4.4, inStock: true },
+        { seller: seller._id, name: 'Chamarra Bomber', description: 'Chamarra bomber estilo varsity, forro suave, cierre central.', price: 899, originalPrice: 1099, category: 'outerwear', images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80'], sizes: [{ size: 'S', stock: 2 }, { size: 'M', stock: 5 }, { size: 'L', stock: 4 }], colors: ['Negro', 'Verde oliva'], rating: 4.7, inStock: true },
+        { seller: seller._id, name: 'Vestido Noche Estrellada', description: 'Vestido largo con destellos, perfecto para eventos nocturnos.', price: 999, category: 'dresses', images: ['https://images.unsplash.com/photo-1566479179817-c0b55c52e1bc?w=400&q=80'], sizes: [{ size: 'XS', stock: 1 }, { size: 'S', stock: 3 }, { size: 'M', stock: 5 }], colors: ['Negro con destellos'], rating: 4.9, inStock: true },
+      ]);
+      console.log('✓ Demo products seeded (8 items)');
+    } catch (err) {
+      console.error('Product seed error:', err.message);
+    }
+  };
+  seedProducts();
+}
+
 // Iniciar servidor
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
