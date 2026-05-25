@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "build",
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/build",
   "framework": "create-react-app",
-  "rootDirectory": "client",
   "headers": [
     {
       "source": "/(.*)",
