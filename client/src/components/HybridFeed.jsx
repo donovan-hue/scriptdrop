@@ -181,10 +181,6 @@ function HybridFeed() {
       {/* Header */}
       <div style={{ padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: 680, margin: '0 auto' }}>
         <HoloText size={26}>Feed</HoloText>
-        <div style={{ display: 'flex', gap: 14, fontSize: 22 }}>
-          <span style={{ cursor: 'pointer' }}>🔔</span>
-          <span style={{ cursor: 'pointer' }}>✨</span>
-        </div>
       </div>
 
       <div style={{ maxWidth: 680, margin: '0 auto', padding: '0 16px' }}>
@@ -369,35 +365,8 @@ function HybridFeed() {
                 );
               }
 
-              const product = item.data;
-              return (
-                <LazyFeedItem key={`product-${product._id}`}>
-                <GlassCard
-                  onClick={() => navigate(`/shop/product/${product._id}`)}
-                  style={{ cursor: 'pointer', border: '1px solid rgba(168,85,247,0.2)', background: 'linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.05))' }}
-                >
-                  <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
-                    {product.images?.[0] && (
-                      <KronosImage src={product.images[0]} alt={product.name} width={100} height={100} radius={12} />
-                    )}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                        <div style={{ color: '#0a0a14', fontSize: 15, fontWeight: 700 }}>{product.name}</div>
-                        <span style={{ fontSize: 10, padding: '3px 10px', borderRadius: 12, background: 'linear-gradient(135deg,#7c3aed,#3b82f6)', color: '#fff' }}>🛍️</span>
-                      </div>
-                      <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, marginBottom: 8, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {product.description}
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-                        <span style={{ color: '#a855f7', fontSize: 18, fontWeight: 800 }}>${product.price}</span>
-                        {product.originalPrice && <span style={{ color: 'rgba(10,10,20,0.35)', fontSize: 13, textDecoration: 'line-through' }}>${product.originalPrice}</span>}
-                        <span style={{ color: '#facc15', fontSize: 12, marginLeft: 'auto' }}>⭐ {product.rating || 0}</span>
-                      </div>
-                    </div>
-                  </div>
-                </GlassCard>
-                </LazyFeedItem>
-              );
+              // Productos de tienda no aparecen en el feed social
+              return null;
             })}
 
             {/* Sentinel para infinite scroll */}
