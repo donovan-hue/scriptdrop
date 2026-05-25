@@ -9,7 +9,7 @@ const protect = async (req, res, next) => {
   }
 
   if (!token) {
-    return res.status(401).json({ message: 'Not authorized to access this route' });
+    return res.status(401).json({ message: 'No tienes permiso para acceder a esta ruta' });
   }
 
   try {
@@ -17,7 +17,7 @@ const protect = async (req, res, next) => {
     req.user = await User.findById(decoded.id);
 
     if (!req.user) {
-      return res.status(401).json({ message: 'User not found' });
+      return res.status(401).json({ message: 'Usuario no encontrado' });
     }
 
     // Garantizar ambas formas: req.user._id (ObjectId) y req.user.id (string)
@@ -25,14 +25,14 @@ const protect = async (req, res, next) => {
 
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Not authorized to access this route' });
+    return res.status(401).json({ message: 'No tienes permiso para acceder a esta ruta' });
   }
 };
 
 const checkRole = (roles = []) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return res.status(403).json({ message: 'Not authorized' });
+      return res.status(403).json({ message: 'No tienes permiso' });
     }
     next();
   };

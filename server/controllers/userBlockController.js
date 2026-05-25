@@ -9,18 +9,18 @@ exports.blockUser = async (req, res) => {
     const { reason } = req.body;
 
     if (blockedBy === blockedUser) {
-      return res.status(400).json({ message: 'You cannot block yourself' });
+      return res.status(400).json({ message: 'No puedes bloquearte a ti mismo' });
     }
 
     const targetUser = await User.findById(blockedUser);
     if (!targetUser) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
     // Verificar si ya existe el bloqueo
     const existing = await UserBlock.findOne({ blockedBy, blockedUser });
     if (existing) {
-      return res.status(400).json({ message: 'User is already blocked' });
+      return res.status(400).json({ message: 'Este usuario ya está bloqueado' });
     }
 
     const block = new UserBlock({
@@ -35,7 +35,7 @@ exports.blockUser = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: 'User blocked successfully',
+      message: 'Usuario bloqueado',
       block
     });
   } catch (error) {
@@ -52,12 +52,12 @@ exports.unblockUser = async (req, res) => {
     const block = await UserBlock.findOneAndDelete({ blockedBy, blockedUser });
 
     if (!block) {
-      return res.status(404).json({ message: 'Block record not found' });
+      return res.status(404).json({ message: 'No se encontró el bloqueo' });
     }
 
     res.status(200).json({
       success: true,
-      message: 'User unblocked successfully'
+      message: 'Usuario desbloqueado'
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

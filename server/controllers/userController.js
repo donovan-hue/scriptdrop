@@ -20,7 +20,7 @@ exports.getUserProfile = async (req, res) => {
       });
 
       if (block) {
-        return res.status(403).json({ message: 'You cannot view this profile' });
+        return res.status(403).json({ message: 'No puedes ver este perfil' });
       }
     }
 
@@ -29,7 +29,7 @@ exports.getUserProfile = async (req, res) => {
       .populate('following', '_id username avatar');
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
     // Historial de posts

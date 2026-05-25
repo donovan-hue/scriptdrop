@@ -84,7 +84,7 @@ exports.login = async (req, res) => {
     // Validar contraseña
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: 'Credenciales incorrectas' });
     }
 
     // Crear JWT token
@@ -132,11 +132,11 @@ exports.followUser = async (req, res) => {
     const currentUser = await User.findById(currentUserId);
 
     if (!userToFollow) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
     if (userToFollow.followers.includes(currentUserId)) {
-      return res.status(400).json({ message: 'Already following this user' });
+      return res.status(400).json({ message: 'Ya sigues a este usuario' });
     }
 
     userToFollow.followers.push(currentUserId);
@@ -168,13 +168,13 @@ exports.forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
     if (!email) {
-      return res.status(400).json({ message: 'Please provide an email' });
+      return res.status(400).json({ message: 'Por favor proporciona un email' });
     }
 
     const user = await User.findOne({ email });
     if (!user) {
       // No revelar si el email existe o no
-      return res.status(200).json({ message: 'If that email exists, a reset link was sent' });
+      return res.status(200).json({ message: 'Si ese email existe, recibirás el enlace en unos minutos' });
     }
 
     // Generar token seguro
@@ -192,7 +192,7 @@ exports.forgotPassword = async (req, res) => {
     emailService.sendPasswordReset(user.email, user.firstName || user.username, resetLink)
       .catch(err => console.error('Password reset email failed:', err));
 
-    res.status(200).json({ message: 'If that email exists, a reset link was sent' });
+    res.status(200).json({ message: 'Si ese email existe, recibirás el enlace en unos minutos' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -241,7 +241,7 @@ exports.unfollowUser = async (req, res) => {
     const currentUser = await User.findById(currentUserId);
 
     if (!userToUnfollow) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
     userToUnfollow.followers = userToUnfollow.followers.filter(

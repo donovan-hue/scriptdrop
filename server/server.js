@@ -62,7 +62,7 @@ const generalLimiter = rateLimit({
   max: 100,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: 'Too many requests, please try again later.' }
+  message: { error: 'Demasiadas solicitudes. Intenta de nuevo en unos minutos.' }
 });
 app.use(generalLimiter);
 
@@ -72,7 +72,7 @@ const authLimiter = rateLimit({
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: 'Too many authentication attempts, please try again in an hour.' }
+  message: { error: 'Demasiados intentos. Espera una hora e intenta de nuevo.' }
 });
 app.use('/api/auth', authLimiter);
 
