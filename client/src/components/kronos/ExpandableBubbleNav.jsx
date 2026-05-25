@@ -130,11 +130,10 @@ const ExpandableBubbleNav = () => {
               width: 64,
               height: 64,
               borderRadius: '50%',
-              border: 'none',
+              border: '1.5px solid rgba(79,172,254,0.3)',
               background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.2), rgba(79,172,254,0.1) 50%, rgba(243,160,255,0.08))',
               backdropFilter: 'blur(12px)',
               boxShadow: '0 4px 16px rgba(79,172,254,0.2), inset 0 1px 0 rgba(255,255,255,0.2)',
-              border: '1.5px solid rgba(79,172,254,0.3)',
               cursor: 'pointer',
               display: 'flex',
               flexDirection: 'column',
@@ -193,7 +192,7 @@ const ExpandableBubbleNav = () => {
               width: 80,
               height: 80,
               borderRadius: '50%',
-              border: 'none',
+              border: isActive ? `2px solid ${cat.color}60` : '1.5px solid rgba(79,172,254,0.25)',
               background: isActive
                 ? `radial-gradient(circle at 35% 35%, rgba(255,255,255,0.3), rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.01))`
                 : 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.15), rgba(255,255,255,0.02))',
@@ -201,7 +200,6 @@ const ExpandableBubbleNav = () => {
               boxShadow: isActive
                 ? `0 0 24px ${cat.color}40, 0 8px 32px rgba(79,172,254,0.3), inset 0 1px 0 rgba(255,255,255,0.3)`
                 : `0 4px 20px rgba(79,172,254,0.15), inset 0 1px 0 rgba(255,255,255,0.2)`,
-              border: isActive ? `2px solid ${cat.color}60` : '1.5px solid rgba(79,172,254,0.25)',
               cursor: 'pointer',
               display: 'flex',
               flexDirection: 'column',
@@ -323,13 +321,12 @@ const ExpandableBubbleNav = () => {
               width: 120,
               height: 120,
               borderRadius: '50%',
-              border: 'none',
+              border: expanded ? '2.5px solid rgba(79,172,254,0.8)' : '2px solid rgba(79,172,254,0.5)',
               background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,0.4), rgba(79,172,254,0.15) 50%, rgba(243,160,255,0.1))',
               backdropFilter: 'blur(20px)',
               boxShadow: expanded
                 ? '0 0 40px rgba(79,172,254,0.6), 0 0 60px rgba(243,160,255,0.4), inset 0 2px 0 rgba(255,255,255,0.4)'
                 : '0 8px 40px rgba(79,172,254,0.3), inset 0 2px 0 rgba(255,255,255,0.3)',
-              border: expanded ? '2.5px solid rgba(79,172,254,0.8)' : '2px solid rgba(79,172,254,0.5)',
               cursor: 'pointer',
               display: 'flex',
               flexDirection: 'column',

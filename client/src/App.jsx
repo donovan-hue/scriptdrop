@@ -99,10 +99,11 @@ function App() {
         toastOptions={{
           duration: 4000,
           style: {
-            background: 'rgba(15, 15, 26, 0.95)',
-            color: '#fff',
-            border: '1px solid rgba(179, 68, 255, 0.3)',
-            backdropFilter: 'blur(20px)'
+            background: 'rgba(255,255,255,0.98)',
+            color: '#0a0a14',
+            border: '1.5px solid rgba(79,172,254,0.2)',
+            backdropFilter: 'blur(20px)',
+            boxShadow: '0 4px 20px rgba(79,172,254,0.15)',
           }
         }}
       />

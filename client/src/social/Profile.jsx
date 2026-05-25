@@ -181,7 +181,7 @@ function Profile() {
       )}
 
       {/* Cover + Avatar */}
-      <div style={{ position: 'relative', height: 180, background: 'linear-gradient(135deg,#1a0533,#0c1a3d,#001c2e)', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: 180, background: 'linear-gradient(135deg,rgba(79,172,254,0.2),rgba(0,242,254,0.15),rgba(243,160,255,0.18))', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
           {[...Array(8)].map((_, i) => (
             <div key={i} style={{ position: 'absolute', width: 240, height: 240, borderRadius: '50%', border: '1px solid rgba(168,85,247,0.3)', top: i * 10 - 60, left: i * 25 - 80 }} />

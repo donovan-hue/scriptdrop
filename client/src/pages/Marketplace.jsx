@@ -195,7 +195,7 @@ function CreateListingModal({ onClose, onCreated }) {
             style={selectStyle}
           >
             {CATEGORY_FILTERS.filter(c => c.value !== '').map(c => (
-              <option key={c.value} value={c.value} style={{ background: '#0f0f1a' }}>{c.label}</option>
+              <option key={c.value} value={c.value}>{c.label}</option>
             ))}
           </select>
           <input

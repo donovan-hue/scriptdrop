@@ -124,7 +124,7 @@ function IncomingCallModal({ callerName, onAccept, onReject }) {
 function LiveStreamer({ socket, streamerId, streamerName, onStop }) {
   const videoRef = useRef(null);
   const recorderRef = useRef(null);
-  const [, setViewers] = useState(0);
+  const [viewers, setViewers] = useState(0); // eslint-disable-line no-unused-vars
   const [chatMessages, setChatMessages] = useState([]);
   const [chatInput, setChatInput] = useState('');
   const [live, setLive] = useState(false);
@@ -406,11 +406,7 @@ export default function Live() {
       <div style={{ padding: '16px', maxWidth: 760, margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
           <HoloText size={26}>LIVE</HoloText>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button onClick={() => navigate('/portal')} style={{ padding: '7px 14px', borderRadius: 20, background: 'rgba(124,58,237,0.2)', color: '#a855f7', border: '1px solid rgba(124,58,237,0.4)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
-              🎧 Audio Spaces
-            </button>
-          </div>
+          <div style={{ display: 'flex', gap: 8 }} />
         </div>
 
         {/* Tabs */}

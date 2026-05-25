@@ -45,6 +45,7 @@ export default function UniversalSearch() {
       doSearch(q, 'all');
       inputRef.current?.focus();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams.get('q')]);
 
   // Suggestions debounce
