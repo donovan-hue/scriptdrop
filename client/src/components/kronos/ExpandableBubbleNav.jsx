@@ -55,8 +55,10 @@ const BUBBLES = [
 
 function getFanPositions(direction, count) {
   const radius = 88;
-  const startAngle = -90; // apunta hacia arriba
-  const range = direction === 'up-right' ? 80 : -80;
+  // up-right: abanico hacia arriba y hacia la derecha (centro pantalla)
+  // up-left:  abanico hacia arriba y hacia la izquierda (centro pantalla)
+  const startAngle = direction === 'up-right' ? -160 : -20;
+  const range      = direction === 'up-right' ?   80 : -80;
   return Array.from({ length: count }, (_, i) => {
     const t = count === 1 ? 0.5 : i / (count - 1);
     const angle = ((startAngle + range * t) * Math.PI) / 180;
@@ -202,7 +204,6 @@ export default function ExpandableBubbleNav() {
             {/* Sub-burbujas en abanico */}
             {isOpen && bubble.subs.map((sub, i) => {
               const pos = fanPos[i];
-              const cx = anchorRight ? -pos.x : pos.x;
               return (
                 <div
                   key={sub.path}
@@ -211,15 +212,14 @@ export default function ExpandableBubbleNav() {
                   style={{
                     position: 'absolute',
                     top: (MAIN_SIZE - SUB_SIZE) / 2,
-                    left: anchorRight ? undefined : (MAIN_SIZE - SUB_SIZE) / 2,
-                    right: anchorRight ? (MAIN_SIZE - SUB_SIZE) / 2 : undefined,
+                    left: (MAIN_SIZE - SUB_SIZE) / 2,
                     width: SUB_SIZE,
                     height: SUB_SIZE,
                     zIndex: 300,
-                    '--tx': `${cx}px`,
+                    '--tx': `${pos.x}px`,
                     '--ty': `${pos.y}px`,
                     animation: `subPopIn 0.38s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s both`,
-                    transform: `translate(${cx}px, ${pos.y}px)`,
+                    transform: `translate(${pos.x}px, ${pos.y}px)`,
                     cursor: 'pointer',
                   }}
                 >

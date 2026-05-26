@@ -297,16 +297,16 @@ function HybridFeed() {
                     )}
 
                     {/* Actions */}
-                    <div style={{ display: 'flex', gap: 24, color: 'rgba(10,10,20,0.5)', fontSize: 13, paddingTop: 8, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                    <div style={{ display: 'flex', gap: 24, color: 'rgba(10,10,20,0.5)', fontSize: 13, paddingTop: 8, borderTop: '1px solid rgba(10,10,20,0.08)' }}>
                       <button
                         onClick={() => handleLike(post._id)}
-                        style={{ background: 'none', border: 'none', color: isLiked ? '#ec4899' : 'rgba(255,255,255,0.5)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit' }}
+                        style={{ background: 'none', border: 'none', color: isLiked ? '#ec4899' : 'rgba(10,10,20,0.4)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit' }}
                       >
                         {isLiked ? '❤️' : '🤍'} {post.likes?.length || 0}
                       </button>
                       <button
                         onClick={() => { setCommentOpen(isOpen ? null : post._id); setCommentText(''); }}
-                        style={{ background: 'none', border: 'none', color: isOpen ? '#06b6d4' : 'rgba(255,255,255,0.5)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit' }}
+                        style={{ background: 'none', border: 'none', color: isOpen ? '#06b6d4' : 'rgba(10,10,20,0.4)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit' }}
                       >
                         💬 {post.comments?.length || 0}
                       </button>
@@ -318,7 +318,7 @@ function HybridFeed() {
                       </button>
                       <button
                         onClick={() => handleBookmark(post._id)}
-                        style={{ background: 'none', border: 'none', color: bookmarks.has(post._id) ? '#a855f7' : 'rgba(255,255,255,0.5)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit', marginLeft: 'auto' }}
+                        style={{ background: 'none', border: 'none', color: bookmarks.has(post._id) ? '#a855f7' : 'rgba(10,10,20,0.4)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'inherit', marginLeft: 'auto' }}
                       >
                         {bookmarks.has(post._id) ? '🔖' : '🏷️'}
                       </button>
