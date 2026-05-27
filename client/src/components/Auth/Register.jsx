@@ -18,6 +18,7 @@ function Register() {
   });
   const [error, setError] = useState('');
   const [slowWarning, setSlowWarning] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { register, loading } = useAuth();
   const navigate = useNavigate();
 
@@ -144,7 +145,28 @@ function Register() {
             <input style={inputStyle} name="phone" type="tel" placeholder="Número de teléfono (ej. +521234567890)" value={formData.phone} onChange={handleChange} required />
           )}
 
-          <input style={inputStyle} name="password" type="password" placeholder="Contraseña (mín. 6 caracteres)" value={formData.password} onChange={handleChange} required />
+          <div style={{ position: 'relative' }}>
+            <input
+              style={{ ...inputStyle, paddingRight: 44 }}
+              name="password"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Contraseña (mín. 6 caracteres)"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(v => !v)}
+              style={{
+                position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
+                background: 'none', border: 'none', cursor: 'pointer', fontSize: 18,
+                color: 'rgba(10,10,20,0.4)', padding: 4,
+              }}
+            >
+              {showPassword ? '🙈' : '👁️'}
+            </button>
+          </div>
 
           <BotonBurbuja3D
             as="button"

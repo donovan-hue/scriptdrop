@@ -19,11 +19,16 @@ function ForgotPassword() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
-      await res.json();
-      setStatus('sent');
+      const data = await res.json();
+      if (res.ok) {
+        setStatus('sent');
+      } else {
+        setStatus('error');
+        setMessage(data.message || 'No se pudo enviar el correo. Intenta de nuevo.');
+      }
     } catch {
       setStatus('error');
-      setMessage('No se pudo conectar al servidor. Intenta de nuevo.');
+      setMessage('El servidor tardó demasiado. Espera unos segundos y vuelve a intentarlo.');
     }
   };
 
